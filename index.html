@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,30 @@
   </head>
   <body>
     <header class="header">
+      <nav class="header__nav">
+        <ul class="menu menu--principal">
+          <li class="menu__item">
+            <a href="#home" class="menu__link active">
+              <span class="menu__text">Home</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#projetos" class="menu__link">
+              <span class="menu__text">Projetos</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#sobre" class="menu__link">
+              <span class="menu__text">Sobre</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#contato" class="menu__link">
+              <span class="menu__text">Contato</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div class="header__brand">
         <img
           class="brand__logo"
@@ -29,7 +53,9 @@
           alt="Dev Hugo Pereira"
         />
       </div>
-      <i id="toggleTheme" class="bi bi-sun"></i>
+      <div class="header__toggle">
+        <i id="toggleTheme" class="bi bi-sun"></i>
+      </div>
     </header>
     <nav class="nav--mobile">
       <ul class="menu menu--mobile">
@@ -59,5 +85,55 @@
         </li>
       </ul>
     </nav>
+    <main>
+      <div class="main__content1">
+        <h1><b>Soluções Criativas &</b> Desenvolvimento Front-end</h1>
+        <p>Hugo Pereira, Paraíba do Sul-RJ, Desenvolvedor Front-end.</p>
+        <ul class="menu menu--social">
+          <li>
+            <a class="menu__link" href="">
+            <i class="menu__icon bi bi-github"></i>
+          </li>
+          <li>
+            <a class="menu__link" href="">
+            <i class="menu__icon bi bi-linkedin"></i>
+          </li>
+          <li>
+            <a class="menu__link" href="">
+            <i class="menu__icon bi bi-instagram"></i>
+          </li>
+          </a>
+        </ul>
+        <button class="btn btn--primary">
+          <span>Ver Projetos</span>
+          <i class="bi bi-arrow-down-right"></i>
+        </button>
+      </div>
+      <div class="main__content2">
+        <img src="/assets/images/video.png"> <!-- video here -->
+      </div>
+    </main>
+    <section class="skills">
+      <h2>Conhecimento nas principais tecnologias do mercado</h2>
+      <ul class="skills__list">
+        <li class="skills__item">
+          <img src="/assets/images/technologies/javascript.svg" alt="" class="skills__logo">
+        </li>
+        <li class="skills__item">
+          <img src="/assets/images/technologies/css.svg" alt="" class="skills__logo">
+        </li>
+        <li class="skills__item">
+          <img src="/assets/images/technologies/bootstrap-fill.svg" alt="" class="skills__logo">
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>
+        © 2025. Todos os Direitos Reservados. Hugo Pereira. Desenvolvido
+        <a href="https://github.com/hugopereira-cs">HUGOPEREIRA-CS</a>
+      </p>
+    </footer>
+
+    <script src="/assets/scripts/scripts.js" defer></script>
   </body>
 </html>

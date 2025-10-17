@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-  list-style: none;
-}
 
-:root {
+:root, :root[data-theme='dark'] {
   --primary-color: #f0f0f0;
 
   --primary-bg-color: #111217;
@@ -21,18 +15,71 @@
   --icon-color: #c7c8c9;
 }
 
+:root[data-theme='light'] {
+  --primary-color: #0B0B0F;
+
+  --primary-bg-color: #E9E9E9;
+  --secundary-bg-color: #C7C8C9;
+  --border-color: #C7C8C9;
+
+  --title-color: #0B0B0F;
+  --text-color: #28292E;
+  --link-color: ##28292E;
+  --icon-color: #56575A;
+}
+
+html[data-theme='light'] .brand__logo {
+  filter: invert(1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  list-style: none;
+}
+
 body {
   background-color: var(--primary-bg-color);
   font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--title-color);
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+b {
+  font-weight: 400h;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+  text-align: justify;
 }
 
 a {
   text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 i {
   color: var(--icon-color);
 }
+
 
 .header {
   display: flex;
@@ -44,6 +91,11 @@ i {
   z-index: 2;
 }
 
+.header__toggle {
+    display: flex;
+    justify-content: flex-end;
+  }
+
 .header__brand .brand__logo {
   width: 2.75rem;
   height: 2.75rem;
@@ -53,6 +105,8 @@ i {
 #toggleTheme {
   font-size: 1.25rem;
   color: var(--primary-color);
+  cursor: pointer;
+  transition: .4s ease-in-out;
 }
 
 .menu {
@@ -75,7 +129,9 @@ i {
 }
 
 .menu__link.active .menu__icon,
-.menu__link.active .menu__text {
+.menu__link.active .menu__text,
+.menu__link:hover .menu__icon,
+.menu__link:hover .menu__text  {
   color: var(--primary-color);
   font-weight: 600;
 }
@@ -102,8 +158,140 @@ i {
   text-transform: uppercase;
 }
 
+.header__nav {
+  display: none;
+}
+
+.menu--principal {
+  gap: 1rem;
+}
+
+.menu--social {
+  gap: 1rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 3.125rem;
+  padding: .875rem 1rem;
+}
+
+.btn span, .btn i {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.btn--primary {
+  border: 1px solid var(--primary-color);
+}
+
+.btn--primary span {
+  color: var(--primary-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main__content1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1rem;
+}
+
+.main__content2 {
+  padding: 0 1rem;
+}
+
+.main__content2 img {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 6.25rem 1rem 2rem 1rem;
+  background: var(--secundary-bg-color);
+  margin-top: -3rem;
+}
+
+.skills h2 {
+  text-transform: none;
+}
+
+.skills__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+
+}
+
+.skills__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+}
+
+.skills__logo {
+  width: 2.375rem;
+  height: 2.375rem;
+  filter: brightness(0) invert(0.7);
+}
+
+footer {
+  margin-bottom: 5rem;
+}
+
+footer p {
+  color: var(--text-color);
+  font-size: .875rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+
 @media (min-width: 768px) {
-  .menu--mobile {
+  .header {
+    position: fixed;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 4rem;
+    background: var(--primary-bg-color);
+  }
+
+  .nav--mobile {
     display: none;
+  }
+
+  .header__nav {
+    display: flex;
+  }
+
+  .header__nav,
+  .header__toggle {
+    min-width: 30%;
+  }
+
+  
+}
+
+@media (min-width:1400px) {
+  .header {
+    padding: 1rem 15rem;
   }
 }
