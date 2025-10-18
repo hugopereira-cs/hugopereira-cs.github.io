@@ -22,7 +22,7 @@
   --primary-bg-color: #e9e9e9;
   --secundary-bg-color: #c7c8c9;
   --primary-border-color: #c7c8c9;
-  --secundary-border-color: #56575a;
+  --secundary-border-color: #9a9a9a;
 
   --title-color: #0b0b0f;
   --text-color: #28292e;
@@ -32,6 +32,10 @@
 
 html[data-theme='light'] .brand__logo {
   filter: invert(1);
+}
+
+html[data-theme='dark'] .skills__logo {
+  filter: invert(80%);
 }
 
 * {
@@ -272,7 +276,7 @@ section {
 .skills__logo {
   width: 2.375rem;
   height: 2.375rem;
-  filter: brightness(0) invert(0.7);
+  filter: brightness(0) invert(0.35);
 }
 
 footer {
@@ -296,6 +300,10 @@ footer p {
 
   .nav--mobile {
     display: none;
+  }
+
+  .header {
+    padding: 1rem 7rem;
   }
 
   .header__nav {
