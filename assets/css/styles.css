@@ -295,7 +295,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .card__cover {
@@ -351,6 +351,70 @@ section {
 .card__body .skills__logo {
   height: 2rem;
 }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.about .about__content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about .about__content1 h2 {
+  margin: 0;
+}
+
+.about__content1 .photo__container {
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo__container .about__photo {
+  width: 12em;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about .about__content2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.col1 .row1 {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.row1 .about__icons {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
 
 footer {
   margin-bottom: 5rem;
@@ -442,6 +506,17 @@ footer p {
 
   .card__cover {
     width: 55%;
+  }
+
+  .about {
+    gap: 5rem;
+  }
+
+  .about__content1 .about__content2 {
+    display: flex;
+    grid-template-columns: 34% 60%;
+    justify-content: flex-start;
+    gap: 4rem;
   }
 
   .projects__container a {
