@@ -527,6 +527,13 @@ section {
   gap: 1rem;
 }
 
+.contact .menu--social .menu__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+}
+
 .contact .btn span {
   font-size: 1.15rem;
   text-transform: lowercase;
@@ -606,7 +613,8 @@ footer p {
     justify-content: flex-start;
   }
 
-  .about {
+  .about,
+  .contact {
     padding: 4rem 6rem;
   }
 
@@ -691,9 +699,20 @@ footer p {
     width: 100%;
   }
 
-
   .btn {
     width: auto;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 6rem;
+  }
+
+  .contact a {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -767,15 +786,10 @@ footer p {
   .about .about__content1 {
     justify-content: space-between;
     align-items: center;
-    gap: 6;
   }
 
   .about__content1 .photo__container {
     justify-content: flex-start;
-  }
-
-  .photo__container .about__photo {
-    margin-left: -3rem;
   }
 
   .about__content2 .col1 {
@@ -790,7 +804,6 @@ footer p {
   .col2 span {
     font-size: 1.25rem;
   }
-
 }
 
 @media (min-width: 1400px) {
@@ -816,13 +829,13 @@ footer p {
 
   .projects,
   .about {
-    padding: 12rem 15rem 2rem;
+    padding: 10rem 15rem 2rem;
   }
 
   .skills {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10rem 16rem 4rem;
+    padding: 10rem 15rem 4rem;
   }
 
   .about .about__text p {
@@ -832,5 +845,25 @@ footer p {
   .col1 span,
   .col2 span {
     font-size: 1.5rem;
+  }
+
+  .contact {
+    padding: 6rem 15rem 4rem;
+  }
+
+  .about .about__content2 {
+    gap: 2.25rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .about .about__content2 {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .about .about__content2 {
+    gap: .75rem;
   }
 }
