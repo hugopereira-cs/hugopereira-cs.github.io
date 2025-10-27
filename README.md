@@ -87,20 +87,6 @@ portfolio/
 - Texto: `#28292e`
 - Bordas: `#c7c8c9` / `#9a9a9a`
 
-## 💻 Como Executar
-
-1. Clone o repositório:
-```bash
-git clone https://github.com/hugopereira-cs/portfolio.git
-```
-
-2. Navegue até o diretório:
-```bash
-cd portfolio
-```
-
-3. Abra o arquivo `index.html` no navegador ou use uma extensão como Live Server no VS Code.
-
 ## 📱 Responsividade
 
 O projeto conta com breakpoints otimizados para diferentes dispositivos:
