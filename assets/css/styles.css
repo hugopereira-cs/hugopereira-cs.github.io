@@ -208,6 +208,10 @@ i {
   transition: 0.3s ease-in-out;
 }
 
+.btn, btn span {
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .btn span,
 .btn i {
   font-size: 1.25rem;
@@ -240,11 +244,6 @@ main {
   gap: 1.5rem;
 }
 
-.main__content2 img {
-  width: 100%;
-  aspect-ratio: 16/9;
-}
-
 section {
   padding: 6.25rem 1rem 2rem;
 }
@@ -254,10 +253,8 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 6.25rem 1rem 2rem;
+  padding: 4rem 1rem;
   background: var(--secundary-bg-color);
-  margin-top: -3rem;
-  z-index: 1;
 }
 
 .skills h2 {
@@ -348,6 +345,18 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card__buttons a {
+  display: flex;
+  gap: .5rem;
+}
+
+.card__buttons a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
 }
 
 .card__body .skills__item {
@@ -601,8 +610,8 @@ footer p {
 
   .skills {
     justify-content: center;
-    padding: 6.25rem 6rem 2rem;
-    margin-top: -6rem;
+    padding: 4rem 6rem;
+
   }
 
   .btn--primary span {
@@ -637,7 +646,6 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4rem;
   }
 
   .card__cover {
@@ -740,7 +748,7 @@ footer p {
   .skills {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10rem 6rem 4rem;
+    padding: 4rem 6rem;
   }
 
   .skills h2 {
@@ -835,7 +843,7 @@ footer p {
   .skills {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10rem 15rem 4rem;
+    padding: 4rem 15rem;
   }
 
   .about .about__text p {
