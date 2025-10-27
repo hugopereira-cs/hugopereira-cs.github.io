@@ -134,7 +134,7 @@ Accordion para exibir informações de cursos de forma organizada e interativa.
 ## 🌐 Deploy
 
 O projeto está disponível online através do GitHub Pages:
-[https://hugopereira-cs.github.io/portfolio/](https://hugopereira-cs.github.io/portfolio/)
+[https://hugopereira-cs.github.io](https://hugopereira-cs.github.io)
 
 ## 👨‍💻 Autor
 
