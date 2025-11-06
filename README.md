@@ -128,7 +128,7 @@ O projeto está disponível online através do GitHub Pages:
 - Localização: Paraíba do Sul - RJ
 - GitHub: [@hugopereira-cs](https://github.com/hugopereira-cs)
 - LinkedIn: [Hugo Pereira](https://www.linkedin.com/in/hugopereiradev/)
-- Email: hugo.pereira.dev@outlook.com
+- Email: hugopereira.dev@outlook.com
 
 ## 📝 Licença
 
