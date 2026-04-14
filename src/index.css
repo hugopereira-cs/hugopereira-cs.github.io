@@ -12,6 +12,8 @@
   --color-brand-accent: #3b82f6;
   --color-brand-accent-hover: #2563eb;
 
+  --image-brand-gradient: linear-gradient(to bottom, #00d2ff, #3b82f6);
+
   /* Fonts */
   --font-sans: 'Rubik', sans-serif;
   --font-title: 'Bitcount Grid Double', sans-serif;
