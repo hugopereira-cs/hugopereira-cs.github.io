@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Colors */
@@ -24,10 +24,16 @@
   /* Border Radius */
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
-  }
+}
 
-  @layer base {
+@layer base {
   body {
     @apply bg-brand-bg text-brand-text-primary font-sans;
   }
+}
+
+@layer components {
+  .bg-brand-gradient {
+    background-image: var(--image-brand-gradient);
   }
+}

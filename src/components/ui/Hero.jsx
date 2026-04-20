@@ -26,7 +26,7 @@ export function Hero() {
   return (
     <div className="flex flex-col w-auto max-w-dvw justify-evenly items-center mx-8 md:flex-row md:gap-8">
       <div className="flex flex-col gap-4 max-w-116 flex-1 justify-center">
-        <h1 className="font-title bg-linear-to-b from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl min-h-[3em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] md:min-h-auto">
+        <h1 className="font-title bg-brand-gradient bg-clip-text text-transparent text-4xl min-h-[3em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] md:min-h-auto">
           {animatedText}
           <span className="inline-block w-0.5 h-[1em] bg-cyan-400 ml-1 animate-pulse align-middle"></span>
         </h1>
@@ -38,7 +38,7 @@ export function Hero() {
         <img
           src="./professional-photo.png"
           alt="Imagem do Dev Hugo Pereira"
-          className="w-auto max-h-180 mt-8 md:mt-0 md:mb-8 border-2 border-brand-border rounded-2xl"
+          className="w-auto max-h-180 mt-8 md:mt-0 md:mb-8 border-2 border-brand-border"
         />
       </div>
     </div>

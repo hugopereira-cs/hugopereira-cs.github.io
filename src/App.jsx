@@ -1,11 +1,11 @@
 import { Hero } from './components/ui/Hero';
-import { Header } from './components/ui/Header';
+import { HeaderTabs } from './components/ui/HeaderTabs';
 
 function App() {
   return (
     <>
-      <div className="bg-brand-surface shadow-soft border border-brand-border rounded-2xl h-auto min-h-[80vh] my-4 mx-4 lg:my-12 lg:mx-12">
-        <Header />
+      <div className="bg-brand-surface shadow-soft border border-brand-border h-auto min-h-[80vh] my-4 mx-4 lg:my-12 lg:mx-12">
+        <HeaderTabs />
         <Hero />
       </div>
     </>
