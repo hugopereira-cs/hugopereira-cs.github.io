@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HeaderTabs } from './components/ui/HeaderTabs';
-import { Hero } from './components/ui/Hero';
+import { Hero } from './components/sections/Hero';
 import { Projects } from './components/sections/Projects';
 import { About } from './components/sections/About';
 import { Contact } from './components/sections/Contact';
+import { MainLayout } from './components/layout/MainLayout';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -30,10 +31,10 @@ function AnimatedRoutes() {
 
 function AppContent() {
   return (
-    <div className="bg-brand-surface shadow-soft border border-brand-border h-auto min-h-[80vh] my-4 mx-4 lg:my-12 lg:mx-12">
+    <MainLayout>
       <HeaderTabs />
       <AnimatedRoutes />
-    </div>
+    </MainLayout>
   );
 }
 
