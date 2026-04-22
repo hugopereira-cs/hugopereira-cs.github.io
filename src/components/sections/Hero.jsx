@@ -38,7 +38,7 @@ export function Hero() {
         <img
           src="./professional-photo.png"
           alt="Imagem do Dev Hugo Pereira"
-          className="w-auto max-h-180 mt-8 md:mt-0 md:mb-8 border-2 border-brand-border"
+          className="w-auto max-h-180 mt-8 md:mt-0 border-2 border-brand-border"
         />
       </div>
     </div>

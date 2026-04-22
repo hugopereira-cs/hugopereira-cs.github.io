@@ -12,7 +12,7 @@ export function TabItem({ value, title, isSelected = false }) {
       {isSelected && (
         <motion.div
           layoutId="activeTab"
-          className="absolute left-0 -bottom-5.5 right-0 h-0.5 bg-brand-accent-hover"
+          className="absolute left-0 -bottom-6 right-0 h-0.5 bg-brand-accent-hover"
         />
       )}
     </Tabs.TabsTrigger>
