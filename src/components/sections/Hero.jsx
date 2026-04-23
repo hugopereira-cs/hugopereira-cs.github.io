@@ -35,6 +35,7 @@ export function Hero() {
         </p>
       </div>
       <div className="flex-1 flex justify-center max-w-180">
+        {/* TODO: Trocar imagem */}
         <img
           src="./professional-photo.png"
           alt="Imagem do Dev Hugo Pereira"
