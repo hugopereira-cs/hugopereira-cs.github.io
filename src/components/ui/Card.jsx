@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 
 export function Card({ children }) {
-  return <div className="flex flex-col w-auto md:w-90 max-w-dvw gap-4 mx-8 mb-4">{children}</div>;
+  return (
+    <div className="grid grid-cols-1 w-96 lg:w-full max-w-xs lg:max-w-lg gap-4 lg:gap-8 mx-auto mb-4 lg:mb-0">
+      {children}
+    </div>
+  );
 }
 
 Card.propTypes = {

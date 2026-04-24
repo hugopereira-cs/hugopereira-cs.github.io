@@ -5,11 +5,11 @@ import { Button } from './Button';
 export function ProjectItem({ title, description, image, features, projectURL, gitHubURL }) {
   return (
     <Card>
-      <img src={image} alt={`Imagem do projeto ${title}`} className="rounded" />
-      <div className="flex flex-col gap-4">
-        <h1 className="text-xl font-semibold text-brand-text-primary">{title}</h1>
-        <p className="text-brand-text-primary">{description}</p>
-        <ul className="text-brand-text-secondary pl-8 list-disc list-outside">
+      <img src={image} alt={`Imagem do projeto ${title}`} className="w-full h-auto rounded" />
+      <div className="grid-cols-1">
+        <h2 className="text-2xl font-semibold text-brand-text-primary mb-2">{title}</h2>
+        <p className="text-lg text-brand-text-primary mb-1">{description}</p>
+        <ul className="text-lg text-brand-text-secondary pl-8 list-disc list-outside">
           {features.map((feature, index) => (
             <li key={index}>{feature}</li>
           ))}
@@ -29,5 +29,6 @@ ProjectItem.propTypes = {
   image: PropTypes.string.isRequired,
   features: PropTypes.arrayOf(PropTypes.string).isRequired,
   projectURL: PropTypes.string.isRequired,
-  gitHubURL: PropTypes.string.isRequired
+  gitHubURL: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
