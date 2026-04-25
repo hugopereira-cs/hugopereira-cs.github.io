@@ -1,5 +1,5 @@
 import { ProjectItem } from '../ui/ProjectItem';
-// TODO: Popular projects
+// TODO: Adicionar outros projetos
 const projects = [
   {
     title: 'Calculadora React',
