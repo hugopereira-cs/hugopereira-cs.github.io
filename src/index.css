@@ -24,6 +24,9 @@
   /* Border Radius */
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
+
+  /* Animations */
+  --animate-fadeIn: fadeIn 0.2s ease-in-out;
 }
 
 @layer base {
@@ -35,5 +38,20 @@
 @layer components {
   .bg-brand-gradient {
     background-image: var(--image-brand-gradient);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: var(--animate-fadeIn);
   }
 }

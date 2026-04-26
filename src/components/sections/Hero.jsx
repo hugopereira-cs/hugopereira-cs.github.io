@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { SITE_CONTENT } from '../../constants/content';
 
 function useTypingEffect(text, speed = 50) {
   const [displayedText, setDisplayedText] = useState('');
@@ -20,7 +21,8 @@ function useTypingEffect(text, speed = 50) {
 }
 
 export function Hero() {
-  const fullText = '<Olá, sou Hugo, Desenvolvedor Front-end />';
+  const { hero } = SITE_CONTENT;
+  const fullText = hero.title;
   const animatedText = useTypingEffect(fullText, 70);
 
   return (
@@ -30,15 +32,13 @@ export function Hero() {
           {animatedText}
           <span className="inline-block w-0.5 h-[1em] bg-cyan-400 ml-1 animate-pulse align-middle"></span>
         </h1>
-        <p className="text-sm md:text-base">
-          <b>Criatividade em Código &</b> Desenvolvimento Front-end
-        </p>
+        <p className="text-sm md:text-base">{hero.slogan}</p>
       </div>
       <div className="flex-1 flex justify-center max-w-180">
         {/* TODO: Trocar imagem */}
         <img
-          src="./professional-photo.png"
-          alt="Imagem do Dev Hugo Pereira"
+          src={hero.image}
+          alt={`Imagem do Dev ${hero.name}`}
           className="w-auto max-h-180 mt-8 md:mt-0 border-2 border-brand-border"
         />
       </div>

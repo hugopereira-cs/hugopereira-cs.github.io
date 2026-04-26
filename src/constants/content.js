@@ -37,28 +37,37 @@ export const SITE_CONTENT = {
         title: 'Idiomas',
         items: [
           { name: 'Português', level: 'Nativo' },
-          { name: 'Inglês', level: 'Técnico / Intermediário' } // Placeholder para você ajustar
+          { name: 'Inglês', level: 'Técnico / Intermediário' },
+          { name: 'Italiano', level: 'Básico' }
         ]
       },
       education: {
         title: 'Educação',
         graduation: [
           {
-            institution: 'Nome da Faculdade',
-            course: 'Análise e Desenvolvimento de Sistemas',
-            period: '2023 - 2025'
+            institution: 'Estácio de Sá',
+            course: 'Ciência da Computação - Cursando',
+            period: 'Início: 2024 - Previsão de término: 2028'
           }
         ],
-        courses: [{ name: 'Desenvolvimento Web Fullstack', platform: 'DIO', hours: '120h' }]
+        courses: [
+          { name: 'Bootcamp Front-end do Zero', platform: 'DIO', hours: '75h' },
+          { name: 'Formação JavaScript Developer', plataform: 'DIO', hours: '39h' },
+          { name: 'Fundamentos do React', plataform: 'Rocketseat', hours: '6h' },
+          { name: 'Formação React Developer', plataform: 'DIO', hours: '34h' },
+          { name: 'Engenharia de Promp', plataform: 'Rocketseat', hours: '2h' },
+          { name: 'Introdução ao Tailwind CSS', plataform: 'DIO', hours: '3h' },
+          { name: 'Bootcamp Linux para Iniciante', plataform: 'DIO', hours: '30h' }
+        ]
       },
       experience: {
         title: 'Experiência Profissional',
         items: [
           {
-            company: 'Empresa ou Freelance',
-            role: 'Desenvolvedor Front-end',
-            period: '2023 - Presente',
-            description: 'Desenvolvimento de interfaces responsivas e manutenção de sistemas.'
+            company: 'Em transição de carreira'
+            // role: 'Desenvolvedor Front-end',
+            //period: '2023 - Presente',
+            // description: 'Desenvolvimento de interfaces responsivas e manutenção de sistemas.'
           }
         ]
       }
