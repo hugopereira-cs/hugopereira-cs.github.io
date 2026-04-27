@@ -19,6 +19,7 @@ const BADGE_CONFIG = {
 export const TECH_DATA = {
   react: { name: 'React', logo: 'react' },
   tailwind: { name: 'TailwindCSS', logo: 'tailwindcss' },
+  typescript: { name: 'TypeScript', logo: 'typescript' },
   javascript: { name: 'JavaScript', logo: 'javascript' },
   html5: { name: 'HTML5', logo: 'html5' },
   css3: { name: 'CSS3', logo: 'css3' },

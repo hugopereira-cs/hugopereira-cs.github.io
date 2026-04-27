@@ -24,6 +24,7 @@ export const SITE_CONTENT = {
         techs: [
           'react',
           'tailwind',
+          'typescript',
           'javascript',
           'html5',
           'css3',
@@ -110,13 +111,24 @@ export const SITE_CONTENT = {
     }
   ],
 
-  contact: {
-    title: 'Contato',
-    email: 'seu.email@exemplo.com',
-    links: {
-      github: 'https://github.com/hugopereira-cs',
-      linkedin: 'https://linkedin.com/in/seu-perfil',
-      emailLink: 'mailto:seu.email@exemplo.com'
+  contact: [
+    {
+      name: 'LinkedIn',
+      title: 'Contecte-se comigo no LinkedIn',
+      logo: '/linkedin.svg',
+      url: 'https://www.linkedin.com/in/hugopereiradev'
+    },
+    {
+      name: 'GitHub',
+      title: 'Contecte-se comigo no GitHub',
+      logo: '/github.svg', // TODO: adicionar logo à pasta public
+      url: 'https://github.com/hugopereira-cs'
+    },
+    {
+      name: 'E-mail',
+      title: 'Envie-me um e-mail',
+      logo: '/email.svg', // TODO: adicionar logo à pasta public
+      url: 'mailto:hugo.pereira.codes@gmail.com'
     }
-  }
+  ]
 };

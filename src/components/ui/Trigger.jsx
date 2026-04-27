@@ -9,17 +9,15 @@ import { SITE_CONTENT } from '../../constants/content';
  */
 function SkillsContent({ techs }) {
   return (
-    <div className="flex flex-wrap gap-3 p-4">
+    <div className="flex flex-wrap gap-3 p-4 justify-center md:justify-start">
       {techs.map((tech) => (
-        <a
-          key={tech}
-          href={getTechBadgeUrl(tech)}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={tech}
-          className="hover:opacity-80 transition-opacity">
-          <img src={getTechBadgeUrl(tech)} alt={tech} />
-        </a>
+        <div key={tech} title={tech}>
+          <img
+            src={getTechBadgeUrl(tech)}
+            alt={tech}
+            className="h-8 lg:h-10 w-auto transition-transform hover:scale-105 hover:opacity-90"
+          />
+        </div>
       ))}
     </div>
   );
@@ -190,7 +188,7 @@ export function Trigger() {
   };
 
   return (
-    <section className="w-full max-w-[320px] lg:max-w-130 border border-brand-border rounded col-span-full flex flex-col">
+    <section className="w-full max-w-[320px] lg:max-w-180 lg:mt-8 border border-brand-border rounded col-span-full flex flex-col mb-4">
       <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="flex flex-col w-full">
         {/* Tablist - Headers das abas */}
         <Tabs.List className="flex flex-wrap lg:flex-nowrap border-brand-border" role="tablist">
@@ -216,11 +214,7 @@ export function Trigger() {
 
         {/* Tab Content - Conteúdo das abas */}
         {tabList.map((tab) => (
-          <Tabs.Content
-            key={tab.key}
-            value={tab.key}
-            className="flex-1 animate-fadeIn"
-            role="tabpanel">
+          <Tabs.Content key={tab.key} value={tab.key} role="tabpanel">
             {renderTabContent(tab)}
           </Tabs.Content>
         ))}
