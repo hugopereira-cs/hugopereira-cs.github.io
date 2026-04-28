@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <section className="w-full overflow-x-hidden px-4 lg:pt-4 gap-4 lg:gap-0 place-items-center">
       <SectionTitle>Contate-me</SectionTitle>
-      <div className="grid grid-cols-1 lg:grid-cols-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {contact.map((item, index) => (
           <ContactCard
             key={index}
@@ -16,6 +16,7 @@ export function Contact() {
             title={item.title}
             logo={item.logo}
             href={item.url}
+            username={item.username}
           />
         ))}
       </div>

@@ -53,12 +53,12 @@ export const SITE_CONTENT = {
         ],
         courses: [
           { name: 'Bootcamp Front-end do Zero', platform: 'DIO', hours: '75h' },
-          { name: 'Formação JavaScript Developer', plataform: 'DIO', hours: '39h' },
-          { name: 'Fundamentos do React', plataform: 'Rocketseat', hours: '6h' },
-          { name: 'Formação React Developer', plataform: 'DIO', hours: '34h' },
-          { name: 'Engenharia de Promp', plataform: 'Rocketseat', hours: '2h' },
-          { name: 'Introdução ao Tailwind CSS', plataform: 'DIO', hours: '3h' },
-          { name: 'Bootcamp Linux para Iniciante', plataform: 'DIO', hours: '30h' }
+          { name: 'Formação JavaScript Developer', platform: 'DIO', hours: '39h' },
+          { name: 'Fundamentos do React', platform: 'Rocketseat', hours: '6h' },
+          { name: 'Formação React Developer', platform: 'DIO', hours: '34h' },
+          { name: 'Engenharia de Promp', platform: 'Rocketseat', hours: '2h' },
+          { name: 'Introdução ao Tailwind CSS', platform: 'DIO', hours: '3h' },
+          { name: 'Bootcamp Linux para Iniciante', platform: 'DIO', hours: '30h' }
         ]
       },
       experience: {
@@ -114,20 +114,23 @@ export const SITE_CONTENT = {
   contact: [
     {
       name: 'LinkedIn',
-      title: 'Contecte-se comigo no LinkedIn',
+      username: '/hugopereiradev',
+      title: 'Contecte-se Comigo no LinkedIn',
       logo: '/linkedin.svg',
       url: 'https://www.linkedin.com/in/hugopereiradev'
     },
     {
       name: 'GitHub',
-      title: 'Contecte-se comigo no GitHub',
-      logo: '/github.svg', // TODO: adicionar logo à pasta public
+      username: '/hugopereira-cs',
+      title: 'Siga-me e Veja Meus Projetos no GitHub',
+      logo: '/github.svg',
       url: 'https://github.com/hugopereira-cs'
     },
     {
       name: 'E-mail',
-      title: 'Envie-me um e-mail',
-      logo: '/email.svg', // TODO: adicionar logo à pasta public
+      username: 'hugo.pereira.codes@gmail.com',
+      title: 'Fale Comigo por E-mail',
+      logo: '/email.svg',
       url: 'mailto:hugo.pereira.codes@gmail.com'
     }
   ]

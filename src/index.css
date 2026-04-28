@@ -30,6 +30,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-brand-bg text-brand-text-primary font-sans;
   }
@@ -54,4 +58,29 @@
   .animate-fadeIn {
     animation: var(--animate-fadeIn);
   }
+}
+
+.scrollbar-modern {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(148, 163, 184, 0.45) rgba(15, 23, 42, 0.35);
+}
+
+.scrollbar-modern::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scrollbar-modern::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 999px;
+}
+
+.scrollbar-modern::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 42, 0.35);
+}
+
+.scrollbar-modern::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.65);
 }
