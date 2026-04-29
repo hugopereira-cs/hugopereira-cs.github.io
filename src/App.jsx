@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HeaderTabs } from './components/ui/HeaderTabs';
-import { Hero } from './components/sections/Hero';
+import { Hero } from './components/sections/Hero/Hero';
 import { Projects } from './components/sections/Projects';
 import { About } from './components/sections/About';
 import { Contact } from './components/sections/Contact';
