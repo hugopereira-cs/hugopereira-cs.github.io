@@ -1,25 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-export function useTypingEffect(text, speed = 50) {
+const INITIAL_DELAY = 1000;
+const DEFAULT_SPEED = 50;
+
+export function useTypingEffect(text = '', speed = DEFAULT_SPEED) {
   const [displayedText, setDisplayedText] = useState('');
 
-  useEffect(() => {
-    let timeoutId;
+  const type = useCallback(() => {
     let index = 0;
-    const type = () => {
+    let timeoutID;
+
+    const typeCharacter = () => {
       if (index < text.length) {
         setDisplayedText(text.slice(0, index + 1));
         index++;
-        // Agenda a execução do próximo caractere
-        timeoutId = setTimeout(type, speed);
+        timeoutID = setTimeout(typeCharacter, speed); // * Recursão com delay
       }
     };
 
-    // Delay incial
-    timeoutId = setTimeout(type, 1000);
+    timeoutID = setTimeout(typeCharacter, INITIAL_DELAY);
 
-    return () => clearTimeout(timeoutId);
+    return () => clearTimeout(timeoutID);
   }, [text, speed]);
+
+  useEffect(() => {
+    return type();
+  }, [type]);
 
   return displayedText;
 }
