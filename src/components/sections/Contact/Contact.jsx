@@ -1,6 +1,6 @@
-import { SITE_CONTENT } from '../../constants/content';
-import { SectionTitle } from '../ui/SectionTitle';
-import { ContactCard } from '../ui/ContactCard';
+import { SITE_CONTENT } from '../../../constants/content';
+import { SectionTitle } from '../../ui/SectionTitle';
+import { ContactCard } from '../../ui/ContactCard';
 
 export function Contact() {
   const contact = SITE_CONTENT.contact;

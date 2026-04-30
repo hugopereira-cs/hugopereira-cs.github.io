@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HeaderTabs } from './components/ui/HeaderTabs';
 import { Hero } from './components/sections/Hero/Hero';
-import { Projects } from './components/sections/Projects';
-import { About } from './components/sections/About';
-import { Contact } from './components/sections/Contact';
+import { Projects } from './components/sections/Projects/Projects';
+import { About } from './components/sections/About/About';
+import { Contact } from './components/sections/Contact/Contact';
 import { MainLayout } from './components/layout/MainLayout';
 
 function AnimatedRoutes() {

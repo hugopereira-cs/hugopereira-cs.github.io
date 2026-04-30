@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 
-export function Card({ children }) {
-  return (
-    <div className="grid grid-cols-1 w-full lg:w-full max-w-xs lg:max-w-lg gap-4 mx-auto mb-4 lg:mb-0">
-      {children}
-    </div>
-  );
-}
+const CardContent = memo(({ children, className = '' }) => {
+  const baseClasses =
+    'grid grid-cols-1 w-full lg:w-full max-w-xs lg:max-w-lg gap-4 mx-auto mb-4 lg:mb-0';
 
-Card.propTypes = {
-  children: PropTypes.node
+  return <div className={`${baseClasses} ${className}`}>{children}</div>;
+});
+
+CardContent.displayName = 'CardContent';
+CardContent.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
 };
+
+export const Card = memo(CardContent);
