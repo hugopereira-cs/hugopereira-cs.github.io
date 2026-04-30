@@ -1,16 +1,26 @@
 import PropTypes from 'prop-types';
 import { ArrowUpRight } from 'lucide-react';
 
+const BUTTON_STYLES = {
+  base: 'px-4 py-2 rounded-md shadow-lg transition-colors ease-in border text-lg',
+  primary:
+    'bg-brand-primary border-brand-primary text-brand-text-primary hover:bg-brand-accent-hover flex items-center gap-2',
+  secondary: 'border-brand-primary text-brand-primary hover:bg-brand-accent-hover'
+};
+
 export function Button({ title, variant, href }) {
-  const className =
-    variant === 'primary'
-      ? 'flex items-center gap-2 px-4 py-2 bg-brand-primary border border-brand-primary text-lg text-brand-text-primary rounded-md shadow-lg transition-colors hover:bg-brand-accent-hover ease-in'
-      : 'px-4 py-2 border border-brand-primary text-lg text-brand-primary rounded-md shadow-lg transition-colors hover:bg-brand-accent-hover ease-in';
+  const variantStyles = variant === 'primary' ? BUTTON_STYLES.primary : BUTTON_STYLES.secondary;
+  const className = `${BUTTON_STYLES.base} ${variantStyles}`;
 
   return (
-    <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      className={className}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${title} (abre em nova aba)`}>
       {title}
-      {variant === 'primary' && <ArrowUpRight size={18} />}
+      {variant === 'primary' && <ArrowUpRight size={18} aria-hidden="true" />}
     </a>
   );
 }
