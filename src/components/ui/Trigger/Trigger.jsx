@@ -1,8 +1,8 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { getTechBadgeUrl } from '../../constants/techs';
-import { SITE_CONTENT } from '../../constants/content';
+import { getTechBadgeUrl } from '../../../constants/techs';
+import { SITE_CONTENT } from '../../../constants/content';
 
 /**
  * Componente para renderizar o conteúdo da aba Skills
