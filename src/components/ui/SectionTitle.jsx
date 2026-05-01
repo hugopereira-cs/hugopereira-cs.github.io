@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
-import { memo } from 'react';
-import { UI_STYLES } from '../../constants/uiStyles';
 
-const SectionTitleComponent = memo(({ children, as: Component = 'h1' }) => {
-  return <Component className={UI_STYLES.text.sectionTitle}>{children}</Component>;
-});
+export function SectionTitle({ children }) {
+  return (
+    <h1 className="text-4xl text-center font-semibold text-brand-text-primary lg:text-5xl mb-8 tracking-wide">
+      {children}
+    </h1>
+  );
+}
 
-SectionTitleComponent.displayName = 'SectionTitle';
-
-SectionTitleComponent.propTypes = {
-  children: PropTypes.node.isRequired,
-  as: PropTypes.oneOf(['h1', 'h2', 'h3'])
+SectionTitle.propTypes = {
+  children: PropTypes.node
 };

@@ -1,6 +1,6 @@
-import { SITE_CONTENT } from '../../../constants/content';
-import { ProjectItem } from '../../ui/ProjectItem';
-import { SectionTitle } from '../../ui/SectionTitle';
+import { SITE_CONTENT } from '../../constants/content';
+import { ProjectItem } from '../ui/ProjectItem';
+import { SectionTitle } from '../ui/SectionTitle';
 
 export function Projects() {
   const { projects } = SITE_CONTENT;

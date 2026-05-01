@@ -1,6 +1,6 @@
-import { SITE_CONTENT } from '../../../constants/content';
-import { Card } from '../../ui/Card';
-import { Trigger } from '../../ui/Trigger/Trigger';
+import { SITE_CONTENT } from '../../constants/content';
+import { Card } from '../ui/Card';
+import { Trigger } from '../ui/Trigger';
 
 export function About() {
   const { about } = SITE_CONTENT;

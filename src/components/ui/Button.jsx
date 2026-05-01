@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
-import { memo } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { UI_STYLES } from '../../constants/uiStyles';
 
-const ButtonComponent = memo(({ title, variant = 'primary', href, 'aria-label': ariaLabel }) => {
-  const variantStyles = variant === 'primary' ? UI_STYLES.primary : UI_STYLES.secondary;
+const BUTTON_STYLES = {
+  base: 'px-4 py-2 rounded-md shadow-lg transition-colors ease-in border text-lg',
+  primary:
+    'bg-brand-primary border-brand-primary text-brand-text-primary hover:bg-brand-accent-hover flex items-center gap-2',
+  secondary: 'border-brand-primary text-brand-primary hover:bg-brand-accent-hover'
+};
 
-  const className = `${UI_STYLES.base} ${variantStyles}`;
+export function Button({ title, variant, href }) {
+  const variantStyles = variant === 'primary' ? BUTTON_STYLES.primary : BUTTON_STYLES.secondary;
+  const className = `${BUTTON_STYLES.base} ${variantStyles}`;
 
   return (
     <a
@@ -14,20 +18,15 @@ const ButtonComponent = memo(({ title, variant = 'primary', href, 'aria-label': 
       className={className}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={ariaLabel || `${title} (abre em nova aba)`}>
+      aria-label={`${title} (abre em nova aba)`}>
       {title}
       {variant === 'primary' && <ArrowUpRight size={18} aria-hidden="true" />}
     </a>
   );
-});
+}
 
-ButtonComponent.displayName = 'Button';
-
-export const Button = ButtonComponent;
-
-ButtonComponent.propTypes = {
+Button.propTypes = {
   title: PropTypes.string.isRequired,
-  variant: PropTypes.oneOf(['primary', 'secondary']),
-  href: PropTypes.string.isRequired,
-  'aria-label': PropTypes.string
+  variant: PropTypes.string,
+  href: PropTypes.string.isRequired
 };
