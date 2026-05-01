@@ -1,6 +1,6 @@
 import { SITE_CONTENT } from '../../../constants/content';
 import { SectionTitle } from '../../ui/SectionTitle';
-import { ContactCard } from '../../ui/ContactCard';
+import { ContactCardFromData } from '../../ui/ContactCard';
 
 export function Contact() {
   const contact = SITE_CONTENT.contact;
@@ -10,14 +10,7 @@ export function Contact() {
       <SectionTitle>Contate-me</SectionTitle>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {contact.map((item, index) => (
-          <ContactCard
-            key={index}
-            name={item.name}
-            title={item.title}
-            logo={item.logo}
-            href={item.url}
-            username={item.username}
-          />
+          <ContactCardFromData key={index} data={item} />
         ))}
       </div>
     </section>

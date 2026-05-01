@@ -17,7 +17,7 @@ export function ProjectItem({ title, description, image, features, projectURL, g
       </div>
       <div className="flex flex-row gap-4">
         <Button href={projectURL} title="Ver Projeto" variant="primary" />
-        <Button href={gitHubURL} title="Repositório" />
+        <Button href={gitHubURL} title="Repositório" variant="secondary" />
       </div>
     </Card>
   );
