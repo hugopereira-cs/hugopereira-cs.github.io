@@ -1,8 +1,8 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { getTechBadgeUrl } from '../../constants/techs';
-import { SITE_CONTENT } from '../../constants/content';
+import { getTechBadgeUrl } from '../../../constants/techs';
+import { SITE_CONTENT } from '../../../constants/content';
 
 /**
  * Componente para renderizar o conteúdo da aba Skills
@@ -46,12 +46,7 @@ function LanguagesContent({ items }) {
 }
 
 LanguagesContent.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      level: PropTypes.string.isRequired
-    })
-  ).isRequired
+  items: PropTypes.array.isRequired
 };
 
 /**
@@ -98,20 +93,8 @@ function EducationContent({ graduation, courses }) {
 }
 
 EducationContent.propTypes = {
-  graduation: PropTypes.arrayOf(
-    PropTypes.shape({
-      institution: PropTypes.string.isRequired,
-      course: PropTypes.string.isRequired,
-      period: PropTypes.string.isRequired
-    })
-  ),
-  courses: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      platform: PropTypes.string.isRequired,
-      hours: PropTypes.string.isRequired
-    })
-  )
+  graduation: PropTypes.array,
+  courses: PropTypes.array
 };
 
 /**
@@ -137,18 +120,11 @@ function ExperienceContent({ items }) {
 }
 
 ExperienceContent.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      company: PropTypes.string.isRequired,
-      role: PropTypes.string.isRequired,
-      period: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
-    })
-  ).isRequired
+  items: PropTypes.array.isRequired
 };
 
 /**
- * Componente Trigger - Layout de abas para a seção About
+ * Componente AboutTabs - Layout de abas para a seção About
  * Implementa um tablist com as abas: Skills, Idiomas, Educação e Experiência
  *
  * Características:
@@ -157,54 +133,29 @@ ExperienceContent.propTypes = {
  * - Animação suave ao trocar entre abas
  * - Design responsivo e estilizado com Tailwind CSS
  */
-export function Trigger() {
+export function AboutTabs() {
   const {
     about: { tabs }
   } = SITE_CONTENT;
 
   const [activeTab, setActiveTab] = useState('skills');
 
-  const tabList = Object.entries(tabs).map(([key, tab]) => ({
-    key,
-    ...tab
-  }));
-
-  /**
-   * Renderiza o conteúdo específico baseado na aba ativa
-   */
-  const renderTabContent = (tab) => {
-    switch (tab.key) {
-      case 'skills':
-        return <SkillsContent techs={tab.techs} />;
-      case 'languages':
-        return <LanguagesContent items={tab.items} />;
-      case 'education':
-        return <EducationContent graduation={tab.graduation} courses={tab.courses} />;
-      case 'experience':
-        return <ExperienceContent items={tab.items} />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <section className="w-full max-w-[320px] lg:max-w-180 lg:mt-8 border border-brand-border rounded col-span-full flex flex-col mb-4">
+    <section className="w-full max-w-[320px] lg:max-w-4xl lg:mt-8 border border-brand-border rounded col-span-full flex flex-col mb-4">
       <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="flex flex-col w-full">
         {/* Tablist - Headers das abas */}
         <Tabs.List className="flex flex-wrap lg:flex-nowrap border-brand-border" role="tablist">
-          {tabList.map((tab, index) => (
+          {Object.entries(tabs).map(([key, tab]) => (
             <Tabs.Trigger
-              key={index}
-              value={tab.key}
+              key={key}
+              value={key}
               className="flex-[1_0_50%] lg:flex-1 min-h-12 px-2 py-3 text-xs md:text-sm lg:text-base font-medium
                          text-brand-text-secondary hover:text-brand-text-primary
                          border-b border-brand-border border-r 
                          lg:border-r-0 last:lg:border-r-0 transition-colors duration-200
                          data-[state=active]:border-b-2 data-[state=active]:border-brand-accent-hover 
                          data-[state=active]:text-brand-text-primary
-                         cursor-pointer relative overflow-hidden group text-center"
-              role="tab"
-              title={tab.title}>
+                         cursor-pointer relative overflow-hidden group text-center">
               <span className="relative z-10 line-clamp-2">{tab.title}</span>
               {/* Efeito de hover subtle */}
               <div className="absolute inset-0 bg-brand-accent-hover/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -213,11 +164,21 @@ export function Trigger() {
         </Tabs.List>
 
         {/* Tab Content - Conteúdo das abas */}
-        {tabList.map((tab) => (
-          <Tabs.Content key={tab.key} value={tab.key} role="tabpanel">
-            {renderTabContent(tab)}
-          </Tabs.Content>
-        ))}
+        <Tabs.Content value="skills">
+          <SkillsContent techs={tabs.skills.techs} />
+        </Tabs.Content>
+        <Tabs.Content value="languages">
+          <LanguagesContent items={tabs.languages.items} />
+        </Tabs.Content>
+        <Tabs.Content value="education">
+          <EducationContent
+            graduation={tabs.education.graduation}
+            courses={tabs.education.courses}
+          />
+        </Tabs.Content>
+        <Tabs.Content value="experience">
+          <ExperienceContent items={tabs.experience.items} />
+        </Tabs.Content>
       </Tabs.Root>
     </section>
   );
