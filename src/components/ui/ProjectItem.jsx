@@ -1,15 +1,16 @@
 import { Card } from './Card';
 import PropTypes from 'prop-types';
 import { Button } from './Button';
+import { UI_STYLES } from '../../constants/uiStyles';
 
 export function ProjectItem({ title, description, image, features, projectURL, gitHubURL }) {
   return (
     <Card>
-      <img src={image} alt={`Imagem do projeto ${title}`} className="w-full h-auto rounded" />
+      <img src={image} alt={`Imagem do projeto ${title}`} className={UI_STYLES.image.rounded} />
       <div className="grid-cols-1">
-        <h2 className="text-2xl font-semibold text-brand-text-primary mb-2">{title}</h2>
-        <p className="text-lg text-brand-text-primary mb-1">{description}</p>
-        <ul className="text-lg text-brand-text-secondary pl-8 list-disc list-outside">
+        <h2 className={UI_STYLES.text.heading3}>{title}</h2>
+        <p className={UI_STYLES.text.base && UI_STYLES.text.large}>{description}</p>
+        <ul className={`${UI_STYLES.text.secondary} lg:text-lg pl-8 list-disc list-outside`}>
           {features.map((feature, index) => (
             <li key={index}>{feature}</li>
           ))}
