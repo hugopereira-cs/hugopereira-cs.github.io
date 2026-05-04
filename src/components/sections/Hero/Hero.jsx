@@ -5,13 +5,6 @@ import { HeroImage } from './HeroImage';
 import { HeroTitle } from './HeroTitle';
 import { memo } from 'react';
 
-const heroShape = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  slogan: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
-});
-
 const HeroContent = memo(({ hero }) => {
   return (
     <section className={HERO_STYLES.container}>
@@ -27,7 +20,7 @@ const HeroContent = memo(({ hero }) => {
 });
 
 HeroContent.displayName = 'HeroContent';
-HeroContent.propTypes = { hero: heroShape };
+HeroContent.propTypes = { hero: PropTypes.object.isRequired };
 
 export function Hero() {
   const { hero } = SITE_CONTENT;
