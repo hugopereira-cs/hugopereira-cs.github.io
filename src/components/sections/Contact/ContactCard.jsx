@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { UI_STYLES } from '../../../constants/uiStyles';
 
 export function ContactCard({ name, title, logo, href, username }) {
   return (
-    <div className="border border-brand-border rounded p-4">
+    <div className={UI_STYLES.card.default}>
       <h2 className="text-center font-semibold text-brand-text-primary lg:text-lg">{title}</h2>
       <a
         href={href}
