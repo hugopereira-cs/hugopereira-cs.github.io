@@ -3,6 +3,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { TabItem } from './TabItem';
 
+/**
+ * Cabeçalho principal com sistema de navegação por abas.
+ * Sincroniza o estado da aba ativa com a URL da aplicação.
+ * @component
+ */
 export function HeaderTabs() {
   const navigate = useNavigate();
   const location = useLocation();

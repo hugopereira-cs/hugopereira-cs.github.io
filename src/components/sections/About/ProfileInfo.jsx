@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types';
 
+/**
+ * Exibe informações rápidas de perfil (Cargo e Localização) com ícones.
+ * @param {Object} props
+ * @param {string} props.role - O cargo atual ou objetivo.
+ * @param {string} props.location - Localização geográfica.
+ * @component
+ */
 export function ProfileInfo({ role, location }) {
   return (
     <ul className="flex flex-col gap-1 lg:text-lg mb-4">

@@ -8,6 +8,14 @@ const BUTTON_STYLES = {
   secondary: 'border-brand-primary text-brand-primary hover:bg-brand-accent-hover'
 };
 
+/**
+ * Componente de botão/link padronizado.
+ * @param {Object} props
+ * @param {string} props.title - Texto do botão.
+ * @param {'primary' | 'secondary'} [props.variant='secondary'] - Estilo visual do botão.
+ * @param {string} props.href - URL de destino.
+ * @component
+ */
 export function Button({ title, variant, href }) {
   const variantStyles = variant === 'primary' ? BUTTON_STYLES.primary : BUTTON_STYLES.secondary;
   const className = `${BUTTON_STYLES.base} ${variantStyles}`;

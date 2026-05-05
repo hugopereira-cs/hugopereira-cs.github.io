@@ -3,6 +3,13 @@ import { UI_STYLES } from '../../../constants/uiStyles';
 import { SectionTitle } from '../../ui/SectionTitle';
 import { ContactCard } from './ContactCard';
 
+/**
+ * Seção de Contato.
+ * Lista diferentes formas de contato (LinkedIn, GitHub, E-mail)
+ * utilizando cards interativos.
+ *
+ * @component
+ */
 export function Contact() {
   const contact = SITE_CONTENT.contact;
 

@@ -2,6 +2,12 @@ import { SITE_CONTENT } from '../../../constants/content';
 import { ProjectItem } from '../../ui/ProjectItem';
 import { SectionTitle } from '../../ui/SectionTitle';
 
+/**
+ * Seção de Projetos.
+ * Renderiza uma grade de projetos extraídos do SITE_CONTENT.
+ * 
+ * @component
+ */
 export function Projects() {
   const { projects } = SITE_CONTENT;
 

@@ -1,3 +1,7 @@
+/**
+ * Centralização de estilos específicos para a seção Hero.
+ * Contém classes do Tailwind CSS para manter a consistência visual do topo da página.
+ */
 export const HERO_STYLES = {
   container:
     'flex flex-col-reverse w-auto max-w-dvw justify-evenly items-center pt-8 mx-8 md:flex-row md:gap-8',

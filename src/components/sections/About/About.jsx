@@ -4,6 +4,12 @@ import { AboutTabs } from './AboutTabs';
 import { ProfileInfo } from './ProfileInfo';
 import { UI_STYLES } from '../../../constants/uiStyles';
 
+/**
+ * Seção "Sobre Mim" do portfólio.
+ * Renderiza a imagem de perfil, informações básicas (cargo, localização)
+ * e as abas detalhadas de habilidades, educação e experiência.
+ * @component
+ */
 export function About() {
   const { about } = SITE_CONTENT;
 

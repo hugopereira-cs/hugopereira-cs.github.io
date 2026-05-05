@@ -5,6 +5,13 @@ import { HeroImage } from './HeroImage';
 import { HeroTitle } from './HeroTitle';
 import { memo } from 'react';
 
+/**
+ * Seção Hero (Cabeçalho principal).
+ * Apresenta o nome, título com efeito de digitação e imagem principal.
+ * Utiliza React.memo para evitar re-renderizações desnecessárias.
+ *
+ * @component
+ */
 const HeroContent = memo(({ hero }) => {
   return (
     <section className={HERO_STYLES.container}>

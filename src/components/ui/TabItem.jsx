@@ -2,6 +2,15 @@ import * as Tabs from '@radix-ui/react-tabs';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
+/**
+ * Item individual de aba para o cabeçalho.
+ * Inclui uma animação de sublinhado quando selecionado.
+ * @param {Object} props
+ * @param {string} props.value - O valor identificador da aba (rota).
+ * @param {string} props.title - O texto exibido na aba.
+ * @param {boolean} [props.isSelected=false] - Indica se a aba está ativa.
+ * @component
+ */
 export function TabItem({ value, title, isSelected = false }) {
   return (
     <Tabs.TabsTrigger

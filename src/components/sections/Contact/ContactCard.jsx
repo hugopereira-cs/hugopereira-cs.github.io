@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types';
 import { UI_STYLES } from '../../../constants/uiStyles';
 
+/**
+ * Card individual para uma rede social ou meio de contato.
+ * @param {Object} props
+ * @param {string} props.name - Nome da rede (ex: LinkedIn).
+ * @param {string} props.title - Frase de chamada (ex: Conecte-se comigo).
+ * @param {string} props.logo - Caminho para o ícone.
+ * @param {string} props.href - Link de destino.
+ * @param {string} props.username - Identificador ou e-mail visível.
+ * @component
+ */
 export function ContactCard({ name, title, logo, href, username }) {
   return (
     <div className={UI_STYLES.card.default}>

@@ -3,6 +3,13 @@ import { TypingCursor } from '../../ui/TypingCursor';
 import { useTypingEffect } from '../../../hooks/useTypingEffect';
 import { HERO_STYLES } from '../../../constants/heroStyles';
 
+/**
+ * Título principal da seção Hero com efeito de digitação.
+ * @param {Object} props
+ * @param {string} props.text - O texto a ser animado.
+ * @param {number} [props.speed=70] - Velocidade da animação em milissegundos.
+ * @component
+ */
 export function HeroTitle({ text, speed = 70 }) {
   const animatedText = useTypingEffect(text, speed);
 

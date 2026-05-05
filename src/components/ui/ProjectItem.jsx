@@ -3,6 +3,18 @@ import PropTypes from 'prop-types';
 import { Button } from './Button';
 import { UI_STYLES } from '../../constants/uiStyles';
 
+/**
+ * Card de exibição de um projeto individual.
+ * Inclui imagem, título, descrição, lista de funcionalidades e links.
+ * @param {Object} props
+ * @param {string} props.title - Título do projeto.
+ * @param {string} props.description - Breve descrição.
+ * @param {string} props.image - URL da imagem de capa.
+ * @param {string[]} props.features - Lista de funcionalidades principais.
+ * @param {string} props.projectURL - Link para o projeto online.
+ * @param {string} props.gitHubURL - Link para o repositório.
+ * @component
+ */
 export function ProjectItem({ title, description, image, features, projectURL, gitHubURL }) {
   return (
     <Card>
