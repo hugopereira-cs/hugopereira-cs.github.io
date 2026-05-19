@@ -77,37 +77,39 @@ export const SITE_CONTENT = {
 
   projects: [
     {
+      title: 'Login com React e TypeScript',
+      description:
+        'Aplicação web para buscar perfis e repositórios do GitHub pelo nome de usuário.',
+      image: './login-react.png',
+      techs: ['react', 'typescript', 'supabase'],
+      features: [
+        'Autenticação com supabase',
+        'Rotas protegidas e rotas públicas',
+        'Gerenciamento de temas'
+      ],
+      gitHubURL: 'https://github.com/hugopereira-cs/tela-de-login-react-ts'
+    },
+    {
       title: 'Calculadora React',
-      description: 'Calculadora criada com React.js',
+      description: 'Calculadora criada com React.js e Tailwind CSS.',
       image: './calculadora.png',
-      techs: ['react', 'javascript', 'css3'],
+      techs: ['react', 'javascript', 'tailwindcss'],
       features: ['Histórico de operações', 'Entrada via teclado ou mouse', 'Interface responsiva'],
       projectURL: 'https://hugopereira-cs.github.io/calculadora-react-dio/',
       gitHubURL: 'https://github.com/hugopereira-cs/calculadora-react-dio'
     },
     {
-      title: 'GitFind',
-      description:
-        'Aplicação web para buscar perfis e repositórios do GitHub pelo nome de usuário.',
-      image: './gitFind.png',
-      techs: ['react', 'javascript', 'github'],
+      title: 'Site/Portfolio',
+      description: 'Portfolio moderno e responsivo, construído com React e Tailwind CSS.',
+      image: './portfolio.png',
+      techs: ['react', 'javascript', 'tailwindcss'],
       features: [
-        'Busca por @username',
-        'Exibição de foto de perfil, nome, login e bio do usuário',
-        'Listagem dos repositórios públicos com nome e descrição'
+        'Título dinâmico com efeito de digitação',
+        'Informações detalhadas e organizadas em abas',
+        'Transição suave entre as páginas'
       ],
-      projectURL: 'https://hugopereira-cs.github.io/gitFind/',
-      gitHubURL: 'https://github.com/hugopereira-cs/gitFind'
-    },
-    {
-      title: 'Conversor de Temperatura',
-      description:
-        'Converter temperaturas entre Fahrenheit e Celsius com interface moderna e amigável, com Vanilla JS.',
-      image: './conversorTemp.png',
-      techs: ['javascript', 'html5', 'css3'],
-      features: ['Conversão bidirecional', 'Design totalmente responsivo', 'Validação de entrada'],
-      projectURL: 'https://hugopereira-cs.github.io/conversor-de-temperatura/',
-      gitHubURL: 'https://github.com/hugopereira-cs/conversor-de-temperatura'
+      projectURL: 'https://hugopereira-cs.github.io/',
+      gitHubURL: 'https://github.com/hugopereira-cs/hugopereira-cs.github.io'
     }
   ],
 

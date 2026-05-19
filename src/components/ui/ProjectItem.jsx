@@ -29,7 +29,7 @@ export function ProjectItem({ title, description, image, features, projectURL, g
         </ul>
       </div>
       <div className="flex flex-row gap-4">
-        <Button href={projectURL} title="Ver Projeto" variant="primary" />
+        {projectURL && <Button href={projectURL} title="Ver Projeto" variant="primary" />}
         <Button href={gitHubURL} title="Repositório" />
       </div>
     </Card>
@@ -41,7 +41,7 @@ ProjectItem.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   features: PropTypes.arrayOf(PropTypes.string).isRequired,
-  projectURL: PropTypes.string.isRequired,
+  projectURL: PropTypes.string,
   gitHubURL: PropTypes.string.isRequired,
   className: PropTypes.string
 };
