@@ -99,17 +99,13 @@ export const SITE_CONTENT = {
       gitHubURL: 'https://github.com/hugopereira-cs/calculadora-react-dio'
     },
     {
-      title: 'Site/Portfolio',
-      description: 'Portfolio moderno e responsivo, construído com React e Tailwind CSS.',
-      image: './portfolio.png',
+      title: 'Site Países da Copa',
+      description: 'Site com informações sobre os 48 países da Copa do Mundo 2026.',
+      image: './paises-da-copa.png',
       techs: ['react', 'javascript', 'tailwindcss'],
-      features: [
-        'Título dinâmico com efeito de digitação',
-        'Informações detalhadas e organizadas em abas',
-        'Transição suave entre as páginas'
-      ],
-      projectURL: 'https://hugopereira-cs.github.io/',
-      gitHubURL: 'https://github.com/hugopereira-cs/hugopereira-cs.github.io'
+      features: ['Internacionalização (i18n)', 'Design Responsivo', 'Modo Escuro & Claro'],
+      projectURL: 'https://hugopereira-cs.github.io/paises-da-copa/',
+      gitHubURL: 'https://github.com/hugopereira-cs/paises-da-copa'
     }
   ],
 
