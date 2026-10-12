@@ -62,7 +62,7 @@ export const SITE_CONTENT = {
             platform: 'DIO',
             hours: '43h'
           },
-          { name: 'Engenharia de Promp', platform: 'Rocketseat', hours: '2h' },
+          { name: 'Engenharia de Prompt', platform: 'Rocketseat', hours: '2h' },
           { name: 'Bootcamp Front-end do Zero', platform: 'DIO', hours: '75h' },
           { name: 'Fundamentos do React', platform: 'Rocketseat', hours: '6h' },
           { name: 'Formação JavaScript Developer', platform: 'DIO', hours: '39h' },
@@ -77,7 +77,7 @@ export const SITE_CONTENT = {
           {
             company: 'Em transição de carreira'
             // role: 'Desenvolvedor Front-end',
-            //period: '2023 - Presente',
+            // period: '2023 - Presente',
             // description: 'Desenvolvimento de interfaces responsivas e manutenção de sistemas.'
           }
         ]
@@ -89,11 +89,11 @@ export const SITE_CONTENT = {
     {
       title: 'Login com React e TypeScript',
       description:
-        'Aplicação web para buscar perfis e repositórios do GitHub pelo nome de usuário.',
+        'Aplicação para realizar login e cadastro de clientes, com autenticação com Supabase, rotas protegidas e rotas públicas.',
       image: './login-react.png',
       techs: ['react', 'typescript', 'supabase'],
       features: [
-        'Autenticação com supabase',
+        'Autenticação com Supabase',
         'Rotas protegidas e rotas públicas',
         'Gerenciamento de temas'
       ],
@@ -123,7 +123,7 @@ export const SITE_CONTENT = {
     {
       name: 'LinkedIn',
       username: '/hugopereiradev',
-      title: 'Contecte-se Comigo no LinkedIn',
+      title: 'Conecte-se Comigo no LinkedIn',
       logo: '/linkedin.svg',
       url: 'https://www.linkedin.com/in/hugopereiradev'
     },
