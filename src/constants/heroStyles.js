@@ -11,5 +11,5 @@ export const HERO_STYLES = {
   cursor: 'inline-block w-0.5 h-[1em] bg-cyan-400 ml-1 animate-pulse align-middle',
   slogan: 'text-sm lg:text-base',
   imageConatiner: 'flex-1 flex justify-center max-w-180',
-  image: 'w-auto max-h-180 md:mt-0 border-2 border-brand-border rounded'
+  image: 'w-auto max-h-140 md:mt-0 border-2 border-brand-border rounded'
 };

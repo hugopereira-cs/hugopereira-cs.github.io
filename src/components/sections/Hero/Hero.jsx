@@ -21,7 +21,7 @@ const HeroContent = memo(({ hero }) => {
           <strong>{hero.slogan}</strong>
         </p>
       </div>
-      <HeroImage src={hero.image} altText={`Imagem do Deev ${hero.name}`} />
+      <HeroImage src={hero.image} altText={`Imagem do Dev ${hero.name}`} />
     </section>
   );
 });
