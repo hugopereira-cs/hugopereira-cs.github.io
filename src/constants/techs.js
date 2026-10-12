@@ -18,15 +18,19 @@ const BADGE_CONFIG = {
 
 export const TECH_DATA = {
   react: { name: 'React', logo: 'react' },
+  nextjs: { name: 'Next.js', logo: 'nextdotjs' },
   tailwind: { name: 'TailwindCSS', logo: 'tailwindcss' },
   typescript: { name: 'TypeScript', logo: 'typescript' },
   javascript: { name: 'JavaScript', logo: 'javascript' },
+  nodejs: { name: 'Node.js', logo: 'nodedotjs' },
+  express: { name: 'Express', logo: 'express' },
   html5: { name: 'HTML5', logo: 'html5' },
   css3: { name: 'CSS3', logo: 'css3' },
   python: { name: 'Python', logo: 'python' },
   c: { name: 'C', logo: 'c' },
   git: { name: 'Git', logo: 'git' },
   github: { name: 'GitHub', logo: 'github' },
+  mongodb: { name: 'MongoDB', logo: 'mongodb' },
   postgresql: { name: 'PostgreSQL', logo: 'postgresql' }
 };
 
