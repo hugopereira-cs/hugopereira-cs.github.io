@@ -19,7 +19,7 @@ export function About() {
         <img
           src={about.image}
           alt={`Imagem de Perfil de ${SITE_CONTENT.hero.name}`}
-          className="flex max-w-48 lg:max-w-80 justify-self-center"
+          className="flexmax-w-48 max-h-48 lg:max-w-80 justify-self-center"
         />
         <div className="lg:justify-self-start">
           <Card>

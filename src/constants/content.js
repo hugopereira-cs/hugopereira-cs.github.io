@@ -6,32 +6,36 @@
 export const SITE_CONTENT = {
   hero: {
     name: 'Hugo Pereira',
-    title: '<Olá, sou Hugo, Desenvolvedor Front-end />',
-    slogan: 'Criatividade em Código & Desenvolvimento Front-end',
-    image: './professional-photo.png'
+    title: '<Olá, sou Hugo, Desenvolvedor Full Stack />',
+    slogan: 'Criatividade em Código & Desenvolvimento Full Stack',
+    image: './professional-photo.png' // Mudar a foto
   },
 
   about: {
-    role: 'Desenvolvedor Front-end',
+    role: 'Desenvolvedor Full Stack',
     location: 'Paraíba do Sul - RJ',
-    description: `Desenvolvedor front-end com foco em criar interfaces modernas, responsivas e bem estruturadas. Possuo experiência em React, Tailwind CSS, HTML, CSS e JavaScript, além de controle de versão com Git e GitHub.`,
+    description: `Desenvolvedor full stack com foco em criar aplicações modernas, responsivas e bem estruturadas. Possuo experiência em Next.js, TypeScript, Node.js, Express, MongoDB, PostgreSQL e Cypress, além de controle de versão com Git e GitHub.`,
     image: './aboutSection.png',
 
-    // Estrutura para o seu componente Trigger
+    // Estrutura para o componente Trigger
     tabs: {
       skills: {
         title: 'Skills',
         techs: [
+          'nextjs',
           'react',
           'tailwind',
           'typescript',
           'javascript',
           'html5',
           'css3',
+          'nodejs',
+          'express',
           'python',
+          'mongodb',
+          'postgresql',
           'git',
-          'github',
-          'postgresql'
+          'github'
         ]
       },
       languages: {
@@ -52,11 +56,17 @@ export const SITE_CONTENT = {
           }
         ],
         courses: [
-          { name: 'Bootcamp Front-end do Zero', platform: 'DIO', hours: '75h' },
-          { name: 'Formação JavaScript Developer', platform: 'DIO', hours: '39h' },
-          { name: 'Fundamentos do React', platform: 'Rocketseat', hours: '6h' },
-          { name: 'Formação React Developer', platform: 'DIO', hours: '34h' },
+          { name: 'Formação Node.js Fundamentals', platform: 'DIO', hours: '30h' },
+          {
+            name: 'Bootcamp Sem Parar Corpay - Back-end do Zero a Prática',
+            platform: 'DIO',
+            hours: '43h'
+          },
           { name: 'Engenharia de Promp', platform: 'Rocketseat', hours: '2h' },
+          { name: 'Bootcamp Front-end do Zero', platform: 'DIO', hours: '75h' },
+          { name: 'Fundamentos do React', platform: 'Rocketseat', hours: '6h' },
+          { name: 'Formação JavaScript Developer', platform: 'DIO', hours: '39h' },
+          { name: 'Formação React Developer', platform: 'DIO', hours: '34h' },
           { name: 'Introdução ao Tailwind CSS', platform: 'DIO', hours: '3h' },
           { name: 'Bootcamp Linux para Iniciante', platform: 'DIO', hours: '30h' }
         ]
