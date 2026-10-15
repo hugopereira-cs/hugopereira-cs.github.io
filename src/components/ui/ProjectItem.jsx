@@ -18,7 +18,13 @@ import { UI_STYLES } from '../../constants/uiStyles';
 export function ProjectItem({ title, description, image, features, projectURL, gitHubURL }) {
   return (
     <Card>
-      <img src={image} alt={`Imagem do projeto ${title}`} className={UI_STYLES.image.rounded} />
+      <img
+        src={image}
+        alt={`Imagem do projeto ${title}`}
+        loading="lazy"
+        decoding="async"
+        className={`w-full aspect-video object-cover ${UI_STYLES.image.rounded}`}
+      />
       <div className="grid-cols-1">
         <h2 className={UI_STYLES.text.heading3}>{title}</h2>
         <p className={UI_STYLES.text.base && UI_STYLES.text.large}>{description}</p>
