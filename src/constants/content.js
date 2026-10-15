@@ -116,6 +116,14 @@ export const SITE_CONTENT = {
       features: ['Internacionalização (i18n)', 'Design Responsivo', 'Modo Escuro & Claro'],
       projectURL: 'https://hugopereira-cs.github.io/paises-da-copa/',
       gitHubURL: 'https://github.com/hugopereira-cs/paises-da-copa'
+    },
+    {
+      title: 'Customer App',
+      description: 'Aplicação full stack para gerenciamento de clientes.',
+      image: './customer-app.png',
+      techs: ['react', 'typescript', 'tailwindcss'],
+      features: ['CRUD completo', 'Front-end + Back-end', 'Salva dados no MongoDB'],
+      gitHubURL: 'https://github.com/hugopereira-cs/customer-app-ui'
     }
   ],
 
