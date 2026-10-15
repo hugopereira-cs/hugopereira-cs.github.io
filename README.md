@@ -1,72 +1,55 @@
-# 🚀 Meu Portfólio Profissional
+# 🚀 Portfólio de Hugo Pereira
 
-Bem-vindo ao repositório do meu portfólio! Este projeto foi desenvolvido para apresentar minhas habilidades, projetos e trajetória como desenvolvedor Front-end. ✨
+Bem-vindo ao repositório do meu portfólio profissional. O site apresenta meu perfil como desenvolvedor Full Stack, minhas habilidades, formação, projetos e formas de contato.
 
----
+## 📝 Sobre o projeto
 
-## 📝 Sobre o Projeto
+Este é um site de portfólio responsivo, desenvolvido com React e Vite. A interface é organizada em páginas para início, projetos, sobre e contato. As informações exibidas no perfil e nos projetos ficam centralizadas em `src/constants/content.js`.
 
-Este é um portfólio moderno e responsivo, construído com **React** e **Tailwind CSS**. O projeto foca em uma arquitetura limpa e organizada, facilitando a manutenção e a escalabilidade. Recentemente, o código passou por uma refatoração completa para aplicar as melhores práticas de desenvolvimento, como componentização e centralização de estilos.
+## 🛠️ Tecnologias
 
----
+O portfólio utiliza:
 
-## 🛠️ Tecnologias Utilizadas
+- **React 19** e **Vite** para a interface e o ambiente de desenvolvimento;
+- **Tailwind CSS 4** para os estilos responsivos;
+- **React Router** para navegação entre páginas;
+- **Radix UI Tabs** para as abas acessíveis da seção Sobre;
+- **Framer Motion** para animações e transições;
+- **Lucide React** para ícones;
+- **PropTypes** para validação das propriedades dos componentes.
 
-- **React** (Vite) ⚛️
-- **Tailwind CSS** (Estilização responsiva) 🎨
-- **Radix UI** (Componentes de acessibilidade - Tabs) 🧩
-- **Framer Motion** (Animações e transições) 🎬
-- **React Router Dom** (Gerenciamento de rotas) 📍
-- **Lucide React** (Biblioteca de ícones) 🖼️
+O perfil também apresenta conhecimentos em tecnologias como Next.js, Node.js, Express, MongoDB e PostgreSQL. Elas fazem parte das habilidades exibidas no portfólio, não das dependências usadas para construir este site.
 
----
+## ✨ O que o site apresenta
 
-## ✨ Funcionalidades
+- **Início:** apresentação com efeito de digitação e foto de perfil.
+- **Projetos:** galeria com imagens, descrições, destaques e links para o repositório; quando disponível, cada projeto também tem um link para a demonstração online.
+- **Sobre:** perfil, habilidades, idiomas, formação acadêmica, cursos e experiência.
+- **Contato:** links para LinkedIn, GitHub e e-mail.
+- **Navegação:** páginas acessíveis por rotas, com transições animadas.
 
-- **Página Inicial (Hero):** Título dinâmico com efeito de digitação. ⌨️
-- **Seção Sobre:** Informações detalhadas organizadas em abas (Skills, Idiomas, Educação e Experiência). 📖
-- **Projetos:** Galeria de projetos com descrição, lista de funcionalidades e links para demonstração e repositório. 💻
-- **Contato:** Cards interativos para fácil acesso ao LinkedIn, GitHub e E-mail. 📧
-- **Navegação Animada:** Transições suaves entre as páginas. 🌈
+## 🧱 Organização
 
----
+- Componentes reutilizáveis para as páginas e elementos da interface.
+- Conteúdo do perfil e dos projetos centralizado em `src/constants/content.js`.
+- Classes de estilo compartilhadas definidas em `src/constants/uiStyles.js`.
+- Badges de tecnologias configurados em `src/constants/techs.js`.
 
-## 🏗️ Destaques da Refatoração (Arquitetura)
+## ✅ Verificação e publicação
 
-Para elevar a qualidade do projeto, apliquei conceitos fundamentais de engenharia de software:
-
-1.  **Componentização:** Divisão da interface em componentes menores e reutilizáveis (ex: `ProfileInfo`, `AboutTabs`, `ContactCard`).
-2.  **Centralização de Estilos:** Uso de um arquivo de constantes (`UI_STYLES`) para garantir consistência visual em todo o projeto.
-3.  **Estrutura de Pastas:** Organização lógica por seções e componentes de UI.
-4.  **Documentação JSDoc:** Implementação de comentários JSDoc para documentar a finalidade e as props de cada componente.
-5.  **Clean Code:** Nomes de variáveis semânticos e remoção de código duplicado.
-
----
-
-## 🚀 Como Executar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/hugopereira-cs/hugopereira-cs.github.io.git
-   ```
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Rode o projeto em modo de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
-
----
+- `npm run lint` executa o ESLint.
+- `npm run build` gera a versão de produção em `dist/`.
+- `npm run preview` serve localmente a versão gerada.
+- `npm run deploy` publica o conteúdo de `dist/` no GitHub Pages (executa o build antes da publicação).
 
 ## 🤝 Contato
 
-Estou em busca da minha primeira oportunidade como Desenvolvedor Front-end (Estágio/Jr). Vamos conversar!
+Estou em busca de uma oportunidade como desenvolvedor. Vamos conversar!
 
 - **LinkedIn:** [/hugopereiradev](https://www.linkedin.com/in/hugopereiradev)
 - **GitHub:** [/hugopereira-cs](https://github.com/hugopereira-cs)
 - **E-mail:** [hugo.pereira.codes@gmail.com](mailto:hugo.pereira.codes@gmail.com)
 
 ---
+
 Feito com ❤️ por Hugo Pereira.
