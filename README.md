@@ -1,55 +1,36 @@
-# 🚀 Portfólio de Hugo Pereira
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Bem-vindo ao repositório do meu portfólio profissional. O site apresenta meu perfil como desenvolvedor Full Stack, minhas habilidades, formação, projetos e formas de contato.
+## Getting Started
 
-## 📝 Sobre o projeto
+First, run the development server:
 
-Este é um site de portfólio responsivo, desenvolvido com React e Vite. A interface é organizada em páginas para início, projetos, sobre e contato. As informações exibidas no perfil e nos projetos ficam centralizadas em `src/constants/content.js`.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 🛠️ Tecnologias
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-O portfólio utiliza:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- **React 19** e **Vite** para a interface e o ambiente de desenvolvimento;
-- **Tailwind CSS 4** para os estilos responsivos;
-- **React Router** para navegação entre páginas;
-- **Radix UI Tabs** para as abas acessíveis da seção Sobre;
-- **Framer Motion** para animações e transições;
-- **Lucide React** para ícones;
-- **PropTypes** para validação das propriedades dos componentes.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-O perfil também apresenta conhecimentos em tecnologias como Next.js, Node.js, Express, MongoDB e PostgreSQL. Elas fazem parte das habilidades exibidas no portfólio, não das dependências usadas para construir este site.
+## Learn More
 
-## ✨ O que o site apresenta
+To learn more about Next.js, take a look at the following resources:
 
-- **Início:** apresentação com efeito de digitação e foto de perfil.
-- **Projetos:** galeria com imagens, descrições, destaques e links para o repositório; quando disponível, cada projeto também tem um link para a demonstração online.
-- **Sobre:** perfil, habilidades, idiomas, formação acadêmica, cursos e experiência.
-- **Contato:** links para LinkedIn, GitHub e e-mail.
-- **Navegação:** páginas acessíveis por rotas, com transições animadas.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🧱 Organização
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Componentes reutilizáveis para as páginas e elementos da interface.
-- Conteúdo do perfil e dos projetos centralizado em `src/constants/content.js`.
-- Classes de estilo compartilhadas definidas em `src/constants/uiStyles.js`.
-- Badges de tecnologias configurados em `src/constants/techs.js`.
+## Deploy on Vercel
 
-## ✅ Verificação e publicação
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- `npm run lint` executa o ESLint.
-- `npm run build` gera a versão de produção em `dist/`.
-- `npm run preview` serve localmente a versão gerada.
-- `npm run deploy` publica o conteúdo de `dist/` no GitHub Pages (executa o build antes da publicação).
-
-## 🤝 Contato
-
-Estou em busca de uma oportunidade como desenvolvedor. Vamos conversar!
-
-- **LinkedIn:** [/hugopereiradev](https://www.linkedin.com/in/hugopereiradev)
-- **GitHub:** [/hugopereira-cs](https://github.com/hugopereira-cs)
-- **E-mail:** [hugo.pereira.codes@gmail.com](mailto:hugo.pereira.codes@gmail.com)
-
----
-
-Feito com ❤️ por Hugo Pereira.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
