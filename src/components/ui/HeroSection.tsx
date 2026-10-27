@@ -51,26 +51,11 @@ export function HeroSection({ profile }: HeroSectionProps) {
           {location}
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/projects"
-            className="flex h-11 items-center justify-center rounded-lg bg-foreground px-6 text-sm font-medium text-background transition-opacity hover:opacity-80"
-          >
-            Ver projetos
-          </Link>
-          <Link
-            href="/contact"
-            className="flex h-11 items-center justify-center rounded-lg border border-foreground/20 px-6 text-sm font-medium text-foreground transition-colors hover:border-foreground/40 hover:bg-foreground/5"
-          >
-            Contato
-          </Link>
-        </div>
       </div>
 
       {/* Foto */}
       <div className="shrink-0">
-        <div className="relative h-40 w-40 overflow-hidden rounded-full ring-2 ring-foreground/10 sm:h-52 sm:w-52">
+        <div className="relative h-40 w-40 overflow-hidden rounded ring-2 ring-foreground/10 sm:h-52 sm:w-52">
           <Image
             src={photos.hero}
             alt={`Foto de ${name}`}
