@@ -34,9 +34,9 @@ async function ProjectsContent({ searchParams }: ProjectsPageProps) {
 
       {filteredProjects.length > 0 ? (
         <ul className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <li key={project.slug}>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} loadImageEagerly={index === 0} />
             </li>
           ))}
         </ul>

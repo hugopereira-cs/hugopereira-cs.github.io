@@ -3,9 +3,10 @@ import type { Project } from "@/types";
 
 type ProjectCardProps = {
   project: Project;
+  loadImageEagerly?: boolean;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, loadImageEagerly = false }: ProjectCardProps) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background shadow-sm">
       <div className="relative aspect-video bg-foreground/5">
@@ -14,6 +15,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           alt={project.cover.alt}
           fill
           sizes="(max-width: 1024px) 100vw, 512px"
+          loading={loadImageEagerly ? "eager" : "lazy"}
           className="object-cover"
         />
       </div>
