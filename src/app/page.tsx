@@ -11,7 +11,7 @@ export default async function Home() {
   const { profile } = await getPortfolio();
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-8">
+    <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-8">
       <HeroSection profile={profile} />
     </main>
   );

@@ -42,11 +42,9 @@ Site/portfólio pessoal para apresentar perfil, tecnologias e projetos, com foco
 ## 4. Páginas
 
 ### 4.1 `/` (Home / Hero)
-- **Hero:** `name`, `role`, `slogan`, `location` e `availability` (como badge), foto em `photos.hero` e dois CTAs: "Ver projetos" (`/projects`) e "Contato" (`/contact`).
-- **Projetos em destaque:** projetos com `featured=true`, em cards.
-- **Skills:** tecnologias com `skills=true` (campo `showInSkills`), agrupadas por `category`: `language`, `frontend`, `backend`, `database` e `tools`.
-- **Sobre resumido:** parágrafo curto com link para `/about`.
-- **Dados:** uma única chamada a `GET /api/v1/portfolio`.
+- **Hero:** breve apresentação com `name`, `role`, `slogan`, `location` e `availability` (como badge), além da imagem de perfil.
+- A Home não inclui CTAs, projetos em destaque, skills nem resumo da seção "Sobre". Essas informações ficam nas páginas adjacentes.
+- **Dados:** consumir somente os dados de perfil necessários para o Hero.
 
 ### 4.2 `/projects`
 - Lista completa de projetos, ordenada pelo campo `order` (já devolvida assim pela API).
@@ -206,7 +204,7 @@ src/
 1. **Fundação:** projeto Next.js + TypeScript + Tailwind + Biome, CI, deploy inicial na Vercel.
 2. **Camada de API:** `apiFetch`, tipos e funções de acesso, com `revalidate`.
 3. **Layout base:** header, footer, tema claro/escuro, fontes e tokens.
-4. **Home:** hero, destaques, skills e sobre resumido.
+4. **Home:** breve apresentação no Hero, sem conteúdo adicional ou botões.
 5. **Projects:** lista completa e filtro por tecnologia na URL.
 6. **About e Contact.**
 7. **Estados e polimento:** `error`, `not-found`, `loading`, metadata/OG, sitemap.
@@ -218,6 +216,7 @@ src/
 - Português apenas na v1.
 - Contato por links, sem formulário.
 - Sem `/projects/[slug]` na v1.
+- Home limitada a uma breve apresentação no Hero; projetos, skills, conteúdo "Sobre" e contato ficam nas páginas próprias.
 - Vibe minimalista e técnica, com tema claro/escuro.
 
 ## 14. Evoluções futuras (fase 2+)
