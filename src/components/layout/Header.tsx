@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-foreground/10 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-3xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6">
         {/* Navegação principal */}
         <nav aria-label="Navegação principal">
           <ul className="flex items-center gap-1 sm:gap-2">
