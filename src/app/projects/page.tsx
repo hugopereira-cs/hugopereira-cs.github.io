@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { TechnologyFilter } from "@/components/projects/TechnologyFilter";
-import { getProjects, getTechnologies } from "@/lib/api";
+import { getProjects, getTechnologies } from "@/lib/data";
 
 type ProjectsPageProps = {
   searchParams: Promise<{ tech?: string | string[] }>;
@@ -12,11 +12,9 @@ function ProjectsLoading() {
 }
 
 async function ProjectsContent({ searchParams }: ProjectsPageProps) {
-  const [{ tech }, projects, technologies] = await Promise.all([
-    searchParams,
-    getProjects(),
-    getTechnologies(),
-  ]);
+  const { tech } = await searchParams;
+  const projects = getProjects();
+  const technologies = getTechnologies();
   const selectedTech = typeof tech === "string" ? tech : "";
   const filteredProjects = selectedTech
     ? projects.filter((project) =>

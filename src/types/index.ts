@@ -1,6 +1,5 @@
 // =============================================================================
-// Tipos centrais do Portfolio Web — espelham os schemas Zod da Portfolio API
-// Ref: spec 00 § 5 (Tipos)
+// Tipos centrais dos dados locais do portfólio.
 // =============================================================================
 
 export type TechCategory = "language" | "frontend" | "backend" | "database" | "tools";
@@ -27,6 +26,7 @@ export type Project = {
 };
 
 export type Language = {
+  code: string;
   name: string;
   level: string;
   levelLabel: string;
@@ -36,12 +36,13 @@ export type Degree = {
   institution: string;
   course: string;
   status: string;
-  expectedEnd?: string;
+  startYear: number;
+  expectedEndYear?: number;
 };
 
 export type Course = {
   name: string;
-  institution: string;
+  platform: string;
   hours: number;
 };
 

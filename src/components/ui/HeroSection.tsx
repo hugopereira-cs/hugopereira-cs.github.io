@@ -17,7 +17,7 @@ export function HeroSection({ profile }: HeroSectionProps) {
   return (
     <section aria-labelledby="hero-heading" className="w-full pb-8 sm:pb-12">
       {/* Capa / Banner Widescreen */}
-      <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl border border-foreground/10 bg-muted shadow-sm">
+      <div className="relative aspect-video w-full overflow-hidden mb-3 rounded-t-2xl border border-foreground/10 bg-muted shadow-sm sm:mb-6">
         <Image
           src="/images/banner.png"
           alt={`Banner ilustrado de ${name}`}
@@ -29,28 +29,6 @@ export function HeroSection({ profile }: HeroSectionProps) {
       </div>
 
       {/* Linha do Avatar + Badge de Disponibilidade */}
-      <div className="relative -mt-12 sm:-mt-16 mb-4 flex flex-wrap items-end justify-between gap-3 px-2 sm:px-4">
-        {/* Avatar com foto real */}
-        <div className="relative h-24 w-24 sm:h-32 sm:w-32 overflow-hidden rounded-full ring-4 ring-background bg-background shadow-md">
-          <Image
-            src="/images/aboutSection.png"
-            alt={`Foto de perfil de ${name}`}
-            fill
-            priority
-            sizes="(max-width: 640px) 96px, 128px"
-            className="object-cover"
-          />
-        </div>
-
-        {/* Badge de disponibilidade */}
-        <span className="mb-1 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
-          <span
-            aria-hidden="true"
-            className="mr-2 h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"
-          />
-          {availability}
-        </span>
-      </div>
 
       {/* Conteúdo textual */}
       <div className="flex flex-col gap-3 px-2 sm:px-4">
@@ -73,6 +51,16 @@ export function HeroSection({ profile }: HeroSectionProps) {
           <MapPin aria-hidden="true" className="h-4 w-4 shrink-0 text-foreground/40" />
           {location}
         </p>
+      </div>
+      <div className="relative mt-4 sm:mt-6 mb-4 flex flex-wrap items-end justify-between gap-3 px-2 sm:px-4">
+        {/* Badge de disponibilidade */}
+        <span className="mb-1 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+          <span
+            aria-hidden="true"
+            className="mr-2 h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"
+          />
+          {availability}
+        </span>
       </div>
     </section>
   );

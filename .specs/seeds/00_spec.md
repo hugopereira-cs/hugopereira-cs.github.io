@@ -4,7 +4,7 @@
 
 ## 1. Visão geral
 
-Site/portfólio pessoal para apresentar perfil, tecnologias e projetos, com foco em conseguir a primeira vaga na área (estágio/júnior). O conteúdo vem da **Portfolio API** própria (Express + TypeScript + Zod), consumida exclusivamente no servidor pelo Next.js.
+Site/portfólio pessoal para apresentar perfil, tecnologias e projetos, com foco em conseguir a primeira vaga na área (estágio/júnior). O conteúdo é mantido em arquivos JSON dentro do projeto Next.js e lido no servidor.
 
 **Objetivo principal:** em ~30 segundos, o recrutador entende quem eu sou, o que sei fazer e consegue abrir meus projetos e meus contatos.
 
@@ -19,13 +19,13 @@ Site/portfólio pessoal para apresentar perfil, tecnologias e projetos, com foco
 | Estilos | Tailwind CSS |
 | Lint/Format | Biome |
 | Deploy | Vercel |
-| Fonte de dados | Portfolio API (`https://portfolio-api-hugo-pereira.vercel.app/api/v1`) |
+| Fonte de dados | Arquivos JSON locais em `src/data/` |
 
 ## 3. Escopo da v1
 
 ### Dentro do escopo
 - Quatro páginas: `/`, `/projects`, `/about`, `/contact`
-- Consumo da API somente no servidor (Server Components)
+- Leitura dos dados JSON locais no servidor (Server Components)
 - Filtro de projetos por tecnologia com estado na URL
 - Tema claro/escuro
 - Tratamento de erro, carregamento e 404
@@ -44,15 +44,15 @@ Site/portfólio pessoal para apresentar perfil, tecnologias e projetos, com foco
 ### 4.1 `/` (Home / Hero)
 - **Hero:** breve apresentação com `name`, `role`, `slogan`, `location` e `availability` (como badge), além da imagem de perfil.
 - A Home não inclui CTAs, projetos em destaque, skills nem resumo da seção "Sobre". Essas informações ficam nas páginas adjacentes.
-- **Dados:** consumir somente os dados de perfil necessários para o Hero.
+- **Dados:** ler somente os dados locais de perfil necessários para o Hero.
 
 ### 4.2 `/projects`
-- Lista completa de projetos, ordenada pelo campo `order` (já devolvida assim pela API).
+- Lista completa de projetos, ordenada pelo campo `order`.
 - Cada card: `cover` (imagem + `alt`), `title`, `summary`, tecnologias, `features` e links: `links.github` sempre e `links.live` somente quando não for `null`.
 - O campo `description` fica reservado para a futura página `/projects/[slug]`; `gallery` é ignorado na v1.
 - **Filtro por tecnologia:** controlado por query string (`/projects?tech=react`), lido via `searchParams` no Server Component. Sem fetch no cliente. Com apenas 3 projetos (todos usam React), o filtro agrega pouco hoje; implementar depois da lista base e manter simples.
 - Estado vazio quando nenhum projeto corresponde ao filtro.
-- **Dados:** `GET /api/v1/projects` (e `GET /api/v1/technologies` para montar as opções do filtro).
+- **Dados:** projetos e tecnologias locais em `src/data/projects.json` e `src/data/technologies.json`.
 
 ### 4.3 `/about`
 - `about` (texto) e `photos.about`.
@@ -60,39 +60,41 @@ Site/portfólio pessoal para apresentar perfil, tecnologias e projetos, com foco
 - **Cursos:** `education.courses` agrupados ou resumidos (são 9 cursos, ~262 h no total), evitando uma lista longa e monótona.
 - **Idiomas:** `languages` com `levelLabel`.
 - **Experiência:** `experience` está vazio hoje; a seção só é renderizada quando houver itens.
-- Seção curta "Como este site foi feito": Next.js → Express API → JSON/Zod, com links para os dois repositórios.
-- **Dados:** `GET /api/v1/profile`.
+- Seção curta "Como este site foi feito": Next.js → arquivos JSON locais, com link para o repositório do site.
+- **Dados:** perfil local em `src/data/profile.json`.
 
 ### 4.4 `/contact`
 - Links diretos a partir de `contacts` (`type`, `name`, `handle`, `url`): LinkedIn, GitHub e e-mail.
 - Link para download do currículo (arquivo estático em `public/`).
 - Sem formulário na v1.
-- **Dados:** `GET /api/v1/profile` (campo `contacts`).
+- **Dados:** perfil local em `src/data/profile.json` (campo `contacts`).
 
-## 5. Consumo da API
+## 5. Dados locais
 
-### Regras
-- Todo `fetch` acontece em **Server Components** (ou `generateMetadata`). Nenhum componente `"use client"` chama a API.
-- Variável de ambiente `API_URL` **sem** o prefixo `NEXT_PUBLIC_`, para nunca ir ao bundle do navegador.
-- Como o navegador nunca chama a API, o CORS não entra em jogo (previews da Vercel funcionam sem mudanças na API).
-- Cache com `revalidate` de 1 hora (`next: { revalidate: 3600 }`). Revalidação sob demanda pode ser adicionada depois.
+Os dados do portfólio são mantidos em JSON, versionados junto com o site, dentro de `src/data/`:
 
-### Camada de acesso (`src/lib/api`)
-Centralizar as chamadas em funções tipadas, por exemplo:
+- `profile.json`: apresentação, contatos, formação, cursos, idiomas e experiência.
+- `projects.json`: projetos e slugs das tecnologias utilizadas.
+- `technologies.json`: nome, categoria e indicação de exibição nas skills.
+
+### Acesso aos dados (`src/lib/data`)
+Centralizar a leitura e normalização dos arquivos em funções tipadas:
 
 ```ts
-getPortfolio(): Promise<Portfolio>
-getProfile(): Promise<Profile>
-getProjects(params?: { featured?: boolean }): Promise<Project[]>
-getTechnologies(params?: { skills?: boolean }): Promise<Technology[]>
+getPortfolio(): Portfolio
+getProfile(): Profile
+getProjects(params?: { featured?: boolean }): Project[]
+getTechnologies(params?: { skills?: boolean }): Technology[]
 ```
 
-- Um helper `apiFetch<T>(path, options)` que monta a URL com `API_URL`, aplica `revalidate`, trata respostas não-OK e lança um erro tipado.
-- Respostas de erro da API seguem o formato `{ error: { code, message } }`.
+- Server Components importam os dados no servidor; não há chamadas HTTP para obter conteúdo do portfólio.
+- A camada local resolve os slugs de `projects.json` para objetos de tecnologia usando `technologies.json`.
+- Projetos são ordenados por `order`; referências a tecnologias inexistentes devem gerar erro explícito.
+- Para atualizar conteúdo, editar os arquivos JSON e publicar um novo deploy do site.
 
 ### Tipos
-- Os tipos de `Profile`, `Project` e `Technology` devem espelhar os schemas Zod da API (`src/schemas/` no repositório da API).
-- Em `Project`, o campo `technologies` contém **objetos de tecnologia**, não apenas slugs (no JSON são slugs; a API devolve os objetos).
+- Os tipos de `Profile`, `Project` e `Technology` devem refletir os arquivos JSON locais.
+- No tipo normalizado usado pela interface, `Project.technologies` contém objetos de tecnologia; em `projects.json`, os valores armazenados são slugs.
 
 ```ts
 type TechCategory = "language" | "frontend" | "backend" | "database" | "tools";
@@ -119,25 +121,24 @@ type Project = {
 };
 ```
 
-`Profile` segue o `profile.json`: `name`, `role`, `slogan`, `location`, `availability`, `about`, `photos`, `languages`, `education` (`degrees` e `courses`), `experience` e `contacts`. Conferir `links.github` (nullable ou não) no schema da API.
+`Profile` segue `profile.json`: `name`, `role`, `slogan`, `location`, `availability`, `about`, `photos`, `languages`, `education` (`degrees` e `courses`), `experience` e `contacts`.
 
 ### Imagens
-- As imagens ficam no front, em `public/images/` (ex.: `public/images/projects/calculadora.png`), e os caminhos vindos da API (`/images/...`) já apontam para lá.
-- Usar `next/image` com `alt` vindo da API (`cover.alt`) e dimensões ou `fill` + `sizes` definidos.
-- Se um dia a API passar a devolver URLs absolutas, configurar `images.remotePatterns` no `next.config`.
+- As imagens ficam no front, em `public/images/` (ex.: `public/images/projects/calculadora.png`), e os caminhos registrados nos arquivos locais apontam para lá.
+- Usar `next/image` com `alt` vindo dos dados (`cover.alt`) e dimensões ou `fill` + `sizes` definidos.
+- Se futuramente forem usadas imagens externas, configurar `images.remotePatterns` no `next.config`.
 - Os nomes dos arquivos precisam bater com os caminhos dos JSONs; se mudar um, mudar o outro.
-- Na v1, copiar os tipos manualmente. Validar a resposta com Zod no front é opcional; avaliar depois (ou extrair um pacote compartilhado).
+- Os tipos dos dados são definidos no front-end; validação de schema em tempo de execução pode ser avaliada posteriormente.
 
 ## 6. Tratamento de falhas e estados
 
 | Arquivo | Função |
 |---|---|
-| `app/error.tsx` | Fallback quando a API falha ou ocorre erro de renderização, com botão "Tentar novamente" |
+| `app/error.tsx` | Fallback quando ocorre erro de renderização, com botão "Tentar novamente" |
 | `app/not-found.tsx` | Página 404 global |
 | `app/loading.tsx` / `app/projects/loading.tsx` | Skeletons/indicadores de carregamento |
 
-- Se a API estiver fora do ar, o site deve exibir uma mensagem amigável, nunca uma tela quebrada.
-- O cache do Next ajuda a servir a última versão válida enquanto a API "acorda" (cold start na Vercel).
+- Dados locais inválidos ou referências inconsistentes devem gerar erros explícitos durante desenvolvimento/build.
 
 ## 7. Design e UX
 
@@ -164,15 +165,11 @@ type Project = {
 - **Typecheck:** `tsc --noEmit` (`npm run typecheck`).
 - **GitHub Actions:** a cada push/PR, rodar install, lint e typecheck.
 - **Opcional:** Vitest + Testing Library para componentes-chave; Playwright para a jornada "home → projects".
-- **README:** tão cuidado quanto o da API, com screenshot, link do deploy, stack e instruções para rodar localmente.
+- **README:** com screenshot, link do deploy, stack e instruções para rodar localmente.
 
 ## 10. Variáveis de ambiente
 
-| Variável | Descrição | Exemplo |
-|---|---|---|
-| `API_URL` | Base da API (somente servidor) | `https://portfolio-api-hugo-pereira.vercel.app` |
-
-Incluir um `.env.example` no repositório. Opcionalmente, validar a variável na inicialização (ex.: com Zod), como já é feito na API.
+A aplicação não exige variáveis de ambiente para carregar os dados do portfólio; eles são mantidos nos arquivos JSON locais.
 
 ## 11. Estrutura de pastas sugerida
 
@@ -194,15 +191,15 @@ src/
 │   ├── projects/             # ProjectCard, ProjectList, TechFilter
 │   └── ui/                   # Botões, badges, seções reutilizáveis
 ├── lib/
-│   ├── api/                  # apiFetch e funções de acesso
-│   └── env.ts                # Leitura/validação de variáveis
+│   └── data/                 # Leitura e normalização dos dados locais
+├── data/                     # profile.json, projects.json e technologies.json
 └── types/                    # Profile, Project, Technology
 ```
 
 ## 12. Roadmap por etapas
 
 1. **Fundação:** projeto Next.js + TypeScript + Tailwind + Biome, CI, deploy inicial na Vercel.
-2. **Camada de API:** `apiFetch`, tipos e funções de acesso, com `revalidate`.
+2. **Dados locais:** JSONs em `src/data`, tipos e funções de leitura/normalização.
 3. **Layout base:** header, footer, tema claro/escuro, fontes e tokens.
 4. **Home:** breve apresentação no Hero, sem conteúdo adicional ou botões.
 5. **Projects:** lista completa e filtro por tecnologia na URL.
@@ -212,7 +209,8 @@ src/
 
 ## 13. Decisões tomadas
 
-- Fetch somente no servidor (sem CORS no fluxo do front).
+- Dados do portfólio versionados em JSON no projeto; sem dependência de API em runtime.
+- Leitura dos dados no servidor por Server Components.
 - Português apenas na v1.
 - Contato por links, sem formulário.
 - Sem `/projects/[slug]` na v1.
@@ -223,23 +221,23 @@ src/
 
 - Página `/projects/[slug]` com estudo de caso (problema, decisões, o que deu errado, aprendizados), usando `generateStaticParams` e `generateMetadata`.
 - Formulário de contato via Route Handler (`app/api/contact/route.ts`).
-- Internacionalização PT/EN (exige textos nos dois idiomas na API).
-- Badge de status da API usando `/api/v1/health`.
+- Internacionalização PT/EN (adicionar os textos traduzidos aos dados locais).
+- Integração futura com uma API caso seja necessário atualizar conteúdo sem novo deploy ou compartilhar os dados com outros consumidores.
 - Testes com Vitest/Testing Library e E2E com Playwright.
-- Validação com Zod no front ou pacote de tipos compartilhado entre API e front.
-- Revalidação sob demanda quando o conteúdo mudar.
+- Validação com Zod no front para detectar inconsistências nos arquivos locais.
+- Migrar dados para uma API/CMS se a edição sem novo deploy ou o compartilhamento com outros consumidores se tornar necessário.
 
-## 15. Dados da API (confirmados) e pontos de atenção
+## 15. Dados locais (confirmados) e pontos de atenção
 
-**Confirmado com os JSONs atuais:**
-- `profile.json` tem `contacts`, então `/contact` depende só da API.
-- `technologies.json` tem `category`, então as skills podem ser agrupadas.
-- Projetos têm `cover`, `features` e `links` (`github` e `live`).
+**Confirmado com os arquivos locais atuais:**
+- `profile.json` contém `contacts`, então `/contact` pode usar os dados locais.
+- `technologies.json` contém `category`, então as skills podem ser agrupadas.
+- `projects.json` contém slugs de tecnologia, `cover`, `features` e links (`github` e `live`).
 
 **Pontos de atenção:**
-- **Currículo:** não existe na API. Colocar o PDF em `public/` (ou, no futuro, adicionar um campo `resume` ao perfil).
+- **Currículo:** não existe nos dados locais. Colocar o PDF em `public/` (ou adicionar um campo `resume` ao perfil).
 - **Cypress e Supabase** têm `showInSkills: false`, mas Cypress aparece no texto de `about`. Decidir se entram nas skills.
 - **Projeto sem deploy:** `login-react-typescript` tem `live: null`. Um projeto com demo online costuma pesar mais para quem avalia.
-- **Todos os projetos são `featured`:** a home e `/projects` mostrarão a mesma lista. Aceitável com 3 projetos; revisar quando houver mais.
+- **Todos os projetos são `featured`:** se a Home voltar a exibir destaques, mostrará a mesma lista de `/projects`; revisar quando houver mais projetos.
 - **`availability`:** "Em transição de carreira" é vago para quem recruta. Considerar algo como "Buscando estágio/júnior".
 - **`experience` vazio:** a seção não deve aparecer na v1.

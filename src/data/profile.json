@@ -1,0 +1,91 @@
+{
+	"name": "Hugo Pereira",
+	"role": "Desenvolvedor Full Stack",
+	"slogan": "Criatividade em Código & Desenvolvimento Full Stack",
+	"location": "Paraíba do Sul, RJ",
+	"availability": "Em transição de carreira",
+	"about": "Desenvolvedor full stack com foco em criar aplicações modernas, responsivas e bem estruturadas. Possuo experiência em Next.js, TypeScript, Node.js, Express, MongoDB, PostgreSQL e Cypress, além de controle de versão com Git e GitHub.",
+	"photos": {
+		"hero": "/images/professional-photo.png",
+		"about": "/images/aboutSection.png"
+	},
+	"languages": [
+		{
+			"code": "pt",
+			"name": "Português",
+			"level": "native",
+			"levelLabel": "Nativo"
+		},
+		{
+			"code": "en",
+			"name": "Inglês",
+			"level": "intermediate",
+			"levelLabel": "Técnico / Intermediário"
+		},
+		{
+			"code": "it",
+			"name": "Italiano",
+			"level": "basic",
+			"levelLabel": "Básico"
+		}
+	],
+	"education": {
+		"degrees": [
+			{
+				"institution": "Estácio de Sá",
+				"course": "Ciência da Computação",
+				"status": "in_progress",
+				"startYear": 2024,
+				"expectedEndYear": 2028
+			}
+		],
+		"courses": [
+			{
+				"name": "Formação Node.js Fundamentals",
+				"platform": "DIO",
+				"hours": 30
+			},
+			{
+				"name": "Bootcamp Sem Parar Corpay - Back-end do Zero a Prática",
+				"platform": "DIO",
+				"hours": 43
+			},
+			{ "name": "Engenharia de Prompt", "platform": "Rocketseat", "hours": 2 },
+			{ "name": "Bootcamp Front-end do Zero", "platform": "DIO", "hours": 75 },
+			{ "name": "Fundamentos do React", "platform": "Rocketseat", "hours": 6 },
+			{
+				"name": "Formação JavaScript Developer",
+				"platform": "DIO",
+				"hours": 39
+			},
+			{ "name": "Formação React Developer", "platform": "DIO", "hours": 34 },
+			{ "name": "Introdução ao Tailwind CSS", "platform": "DIO", "hours": 3 },
+			{
+				"name": "Bootcamp Linux para Iniciante",
+				"platform": "DIO",
+				"hours": 30
+			}
+		]
+	},
+	"experience": [],
+	"contacts": [
+		{
+			"type": "linkedin",
+			"name": "LinkedIn",
+			"handle": "/hugopereiradev",
+			"url": "https://www.linkedin.com/in/hugopereiradev"
+		},
+		{
+			"type": "github",
+			"name": "GitHub",
+			"handle": "/hugopereira-cs",
+			"url": "https://github.com/hugopereira-cs"
+		},
+		{
+			"type": "email",
+			"name": "E-mail",
+			"handle": "hugo.pereira.codes@gmail.com",
+			"url": "mailto:hugo.pereira.codes@gmail.com"
+		}
+	]
+}
