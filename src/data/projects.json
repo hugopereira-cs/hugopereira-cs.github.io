@@ -67,5 +67,27 @@
 		},
 		"featured": true,
 		"order": 3
+	},
+	{
+		"slug": "customer-app",
+		"title": "Customer App",
+		"summary": "Aplicação full stack para gerenciamento de clientes.",
+		"description": "Projeto CRUD completo para gerenciamento de clientes, com front-end com React e back-end com Node.js.",
+		"cover": {
+			"src": "/images/projects/customer-app.png",
+			"alt": "Captura de tela do projeto Site Países da Copa"
+		},
+		"gallery": [],
+		"technologies": ["react", "typescript", "mongodb"],
+		"features": [
+			"CRUD completo",
+			"Front-end + Back-end",
+			"Salva dados no MongoDB"
+		],
+		"links": {
+			"github": "https://github.com/hugopereira-cs/customer-app-ui"
+		},
+		"featured": true,
+		"order": 4
 	}
 ]
