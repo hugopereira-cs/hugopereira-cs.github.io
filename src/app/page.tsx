@@ -5,13 +5,14 @@
 // =============================================================================
 
 import { HeroSection } from "@/components/ui/HeroSection";
+import { PageContainer } from "@/components/ui/PageContainer";
 import { getProfile } from "@/lib/data";
 
 export default function Home() {
   const profile = getProfile();
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-8">
+    <PageContainer className="py-8">
       <HeroSection profile={profile} />
-    </main>
+    </PageContainer>
   );
 }

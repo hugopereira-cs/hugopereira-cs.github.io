@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { TechnologyFilter } from "@/components/projects/TechnologyFilter";
+import { PageContainer } from "@/components/ui/PageContainer";
 import { getProjects, getTechnologies } from "@/lib/data";
 
 type ProjectsPageProps = {
@@ -49,7 +50,7 @@ async function ProjectsContent({ searchParams }: ProjectsPageProps) {
 
 export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10 sm:py-14">
+    <PageContainer className="py-10 sm:py-14">
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Projetos</h1>
         <p className="mt-3 max-w-2xl text-foreground/70">
@@ -59,6 +60,6 @@ export default function ProjectsPage({ searchParams }: ProjectsPageProps) {
       <Suspense fallback={<ProjectsLoading />}>
         <ProjectsContent searchParams={searchParams} />
       </Suspense>
-    </main>
+    </PageContainer>
   );
 }

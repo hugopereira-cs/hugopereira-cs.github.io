@@ -20,7 +20,7 @@ export type Project = {
   gallery: unknown[];
   technologies: Technology[];
   features: string[];
-  links: { github: string; live: string | null };
+  links: { github: string; live?: string | null };
   featured: boolean;
   order: number;
 };
