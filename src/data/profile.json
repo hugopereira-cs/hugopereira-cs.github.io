@@ -1,10 +1,11 @@
 {
 	"name": "Hugo Pereira",
 	"role": "Desenvolvedor Full Stack",
+  "age": 34,
 	"slogan": "Criatividade em Código & Desenvolvimento Full Stack",
 	"location": "Paraíba do Sul, RJ",
 	"availability": "Em transição de carreira",
-	"about": "Desenvolvedor full stack com foco em criar aplicações modernas, responsivas e bem estruturadas. Possuo experiência em Next.js, TypeScript, Node.js, Express, MongoDB, PostgreSQL e Cypress, além de controle de versão com Git e GitHub.",
+	"about": "Desenvolvedor full stack com foco em criar aplicações modernas, responsivas e bem estruturadas. Estou em busca de vaga de estágio para que possa colocar meus conhecimentos em prática e iniciar uma nova etapa da minha jornada, agora, colocando a mão na massa. Possuo experiência em Next.js, TypeScript, Node.js, Express, MongoDB, PostgreSQL e Cypress, além de controle de versão com Git e GitHub, adquiridas por meio de projetos pessoais.",
 	"photos": {
 		"hero": "/images/professional-photo.png",
 		"about": "/images/aboutSection.png"

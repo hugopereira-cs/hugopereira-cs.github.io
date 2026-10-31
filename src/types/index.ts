@@ -2,7 +2,12 @@
 // Tipos centrais dos dados locais do portfólio.
 // =============================================================================
 
-export type TechCategory = "language" | "frontend" | "backend" | "database" | "tools";
+export type TechCategory =
+  | "language"
+  | "frontend"
+  | "backend"
+  | "database"
+  | "tools";
 
 export type Technology = {
   slug: string;
@@ -64,6 +69,7 @@ export type Contact = {
 export type Profile = {
   name: string;
   role: string;
+  age: number;
   slogan: string;
   location: string;
   availability: string;
